@@ -1,0 +1,1 @@
+Ini adalah isi, saya adalah <?php echo $nama; ?><br>status <?php echo $status; ?><br><br>

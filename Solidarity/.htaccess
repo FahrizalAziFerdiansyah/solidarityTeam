@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /ci
+RewriteCond td_persen{REQUEST_FILENAME} !-f
+RewriteCond td_persen{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /ci/index.php/$1 [L]

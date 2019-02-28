@@ -1,6 +1,6 @@
 <?php
 
-Aku tes
+
 /**
  * CodeIgniter
  *

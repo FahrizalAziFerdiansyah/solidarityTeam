@@ -27,6 +27,19 @@ class Crud extends CI_Controller{
         $this->m_data->add_data($data,'pelanggan');
         redirect('crud/index');
     }
+
+    public function hapus($id_user){
+        $where=array('id_user'=>$id_user);
+        $this->m_data->delete($where,'pelanggan');
+        redirect('crud/index');
+    }
+
+    public function edit($id_user){
+        $where=array('id_user'=>$id_user);
+        $data['pelanggan']=$this->m_data->ubah($where,'pelanggan')->result();
+        $this->load->view('v_edit',$data);
+        
+    }
 }
 
 ?>

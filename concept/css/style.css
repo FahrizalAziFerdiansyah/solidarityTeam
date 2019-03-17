@@ -15,7 +15,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-  color: #828282;
+  color: #fff;
   background: #fff;
 }
 
@@ -69,17 +69,17 @@ h1, h2, h3, h4, h5, h6, figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #F73859;
+  background:#FFC312;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #F73859;
+  background: #FFC312;
 }
 
 ::selection {
   color: #fff;
-  background: #F73859;
+  background: #FFC312;
 }
 
 .fh5co-nav {
@@ -101,10 +101,9 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .fh5co-nav #fh5co-logo {
-  font-size: 24px;
+  font-size: 35px;
   padding: 0;
   margin: 0;
-  text-transform: uppercase;
   font-weight: bold;
 }
 @media screen and (max-width: 768px) {
@@ -281,7 +280,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cover {
-  height: 900px;
+  height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -1145,7 +1144,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-heading p {
   font-size: 18px;
   line-height: 1.5;
-  color: #828282;
+  color: #fff;
 }
 .fh5co-heading span {
   display: block;
@@ -1257,7 +1256,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-offcanvas {
   position: fixed;
   z-index: 1901;
-  width: 270px;
+  width: 200px;
   background: black;
   top: 0;
   right: 0;

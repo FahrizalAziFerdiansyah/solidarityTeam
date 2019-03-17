@@ -53,26 +53,19 @@
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-		<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
-		<div class="row">
+			<div class="row">
 				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">Concept<span>.</span></a></div>
+					<div id="fh5co-logo"><a href="index.php">OsingGo</a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
-						<li><a href="index.php">Wisata</a></li>
-						<li class="has-dropdown">
-							<a href="services.php">Pusat Oleh-oleh</a>
-							<ul class="dropdown">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">eCommerce</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
-							</ul>
+						<li style="margin-bottom: 20px"><a href="wisata.php">Wisata</a></li>
+						<li style="margin-bottom: 20px" ><a href="services.php">Pusat Oleh-oleh</a>
 						</li>
 
-						<li><a href="products.php">Bank Sampah</a></li>
+						<li style="margin-bottom: 20px"><a href="products.php">Bank Sampah</a></li>
 						<li><a href="about.php">Tentang</a></li>
 					</ul>
 				</div>
@@ -80,7 +73,7 @@
 			
 		</div>
 	</nav>
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_1.jpg);" data-stellar-background-ratio="0.5">
+	<header  class="fh5co-cover" role="banner" style="background-image:url(images/bg.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">

@@ -57,22 +57,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">Concept<span>.</span></a></div>
+					<div id="fh5co-logo"><a href="index.php">OsingGo</a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
-						<li><a href="index.php">Wisata</a></li>
-						<li class="has-dropdown">
-							<a href="services.php">Pusat Oleh-oleh</a>
-							<ul class="dropdown">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">eCommerce</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
-							</ul>
+						<li style="margin-bottom: 20px"><a href="wisata.php">Wisata</a></li>
+						<li style="margin-bottom: 20px" ><a href="services.php">Pusat Oleh-oleh</a>
 						</li>
 
-						<li><a href="products.php">Bank Sampah</a></li>
+						<li style="margin-bottom: 20px"><a href="products.php">Bank Sampah</a></li>
 						<li><a href="about.php">Tentang</a></li>
 					</ul>
 				</div>
@@ -90,8 +83,7 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<h1 class="mb30">Let us build brands together shall we?</h1>
 							<p>
-								<a href="http://gettemplates.co/" target="_blank" class="btn btn-primary">Get Started</a>  <em class="or">or</em> 
-								<a href="https://vimeo.com/channels/staffpicks/93951774" class="link-watch popup-vimeo">Watch Video</a>
+								<a href="http://gettemplates.co/" target="_blank" class="btn btn-primary">Get Started</a> 
 							</p>
 						</div>
 					</div>

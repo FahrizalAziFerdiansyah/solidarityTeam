@@ -34,7 +34,7 @@ class Crud extends CI_Controller{
         redirect('crud/index');
     }
 
-    public function edit($id_user){
+     function edit($id_user){
         $where=array('id_user'=>$id_user);
         $data['pelanggan']=$this->m_data->ubah($where,'pelanggan')->result();
         $this->load->view('v_edit',$data);

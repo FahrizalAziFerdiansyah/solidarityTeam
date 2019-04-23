@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Integrasi barcode scanner</title>
+<style type="text/css">
+body{
+	background:#CCC;
+	margin:0px;
+	padding:none;
+}
+#main{
+	width:960px;
+	min-height:500px;
+	margin:0px auto;
+	background:#FFF;
+}
+#content{
+	margin:0px 10%;
+}
+label{
+	min-width:100px;
+}
+h2{
+	margin-top:0%;
+}
+table#force{
+	border:solid 1px #666;
+	width:80%;
+}
+table#force th{
+	border:solid 1px #666;
+	background:#006;
+	color:#FFF
+}
+
+</style>
+</head>
+
+<body>
+	<div id="main">
+    	<div id="content">
+    		<h2 align="center">Integrasi barcode scanner</h2>
+             <?php
+		  include"db.php";
+
+		   $nama = isset($_POST['nama']);
+		   if($nama)
+		   {
+			   $idbarang =$_POST['idbarang'];
+			   $nama = $_POST['nama'];
+			   $jumlah = $_POST['jumlah'];
+			   $kategori = $_POST['kategori'];
+			   $harga = $_POST['harga'];
+			   if(!empty($idbarang))
+			   {
+				   	mysql_query("UPDATE barang SET nama_barang = '$nama' , qty = '$jumlah' , kategori ='$kategori' ,harga = '$harga' WHERE id_barang = '$idbarang'");
+			   }
+			   else
+			   {
+			   	mysql_query("INSERT INTO barang VALUES ('NULL','$nama','$jumlah','$kategori','$harga')");
+			   }
+		   }
+
+		   //DELETE files
+		   $idb = isset($_GET['h']);
+		   if($idb)
+		   {
+			   $idb = $_GET['h'];
+			   mysql_query("DELETE FROM barang WHERE id_barang = '$idb'");
+		   }
+
+		   $ide = isset($_GET['e']);
+		   if($ide)
+		   {
+			    $ide = $_GET['e'];
+			   $tampil = mysql_query("SELECT *FROM barang WHERE id_barang = '$ide'");
+			   while($rowedit = mysql_fetch_array($tampil))
+			   {
+				   $idbar = $rowedit['id_barang'];
+				   $nam = $rowedit['nama_barang'];
+				   $jum = $rowedit['qty'];
+				   $kat = $rowedit['kategori'];
+				   $rego = $rowedit['harga'];
+			   }
+		   }else
+		   {
+			   $idbar="";
+			   $nam ="";
+			   $jum ="";
+			   $kat ="";
+			   $rego="";
+		   }
+
+   ?>
+            <form action="index.php" method="post">
+            <table >
+            <tr><td></td><td><input type="hidden" name="idbarang" value="<?php echo $idbar ?>" /></td></tr>
+            	<tr><td><label>Nama Barang</label></td><td><input type="text" name="nama" value="<?php echo $nam ?>" required placeholder="Nama Barang" /></td></tr>
+                <tr><td><label>Jumlah Barang</label></td><td><input type="number" value="<?php echo $jum ?>" name="jumlah" required  /><br/>
+                <tr><td><label>kategori Barang</label></td><td><select name="kategori">
+                					<option value="<?php echo $kat?>"><?php echo $kat?></option>
+                					<option value="baju">baju</option>
+                                    <option value="sabun">sabun</option>
+                				</select></td></tr>
+                <tr><td><label>harga Barang</label></td><td><input type="number" value="<?php echo $rego?>" name="harga" required  /></td></tr>
+                <tr><td></td><td><input type="submit"/></td></tr>
+                </table>
+              </form>
+          </div>
+
+          <table id="force" align="center">
+          	<thead>
+            	<tr>
+                	<th style="border:solid 1px #666">No</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Kategori</th>
+                    <th>Harga Satuan</th>
+                    <th>Action</th>
+                </th>
+            </thead>
+            <?php
+			$no=1;
+			$data = mysql_query("SELECT *FROM barang");
+			while($rows = mysql_fetch_array($data))
+			{
+
+			?>
+          	<tr <?php if($no%2==0) echo "bgcolor='#CCCCCC'"?>  >
+            	<td><?php echo $no; ?></td>
+                <td><?php echo $rows['nama_barang']; ?></td>
+                <td><?php echo $rows['qty']; ?></td>
+                <td><?php echo $rows['kategori']; ?></td>
+                <td><?php echo $rows['harga']; ?></td>
+                <td><a href="index.php?e=<?php echo $rows['id_barang']?>">Ubah</a> | <a href="index.php?h=<?php echo $rows['id_barang']?>">Hapus</a></td>
+            </tr>
+            <?php $no++;
+			}
+			?>
+          </table>
+    </div>
+
+</body>
+</html>

@@ -1,8 +1,7 @@
 <?php 
 $title = "Daftar Penyedia Jasa Web";
 include_once "header.php";
-include_once "koneksi.php"; 
-$data = mysqli_query($mysqli,"SELECT * FROM jasaweb");?>
+include_once "koneksi.php"; ?>
 
       <div class="row">
         <div class="col-md-12">
@@ -23,23 +22,32 @@ $data = mysqli_query($mysqli,"SELECT * FROM jasaweb");?>
                 </tr>
               </thead>
               <tbody>
-            <?php $i=1; ?>
-            <?php foreach ($data as $row):  ?>
+              <?php
+                $data = file_get_contents('http://localhost/HackAthon/ambildata.php');
+                $no=1;
+                if(json_decode($data,true)){
+                  $obj = json_decode($data);
+                  foreach($obj->results as $item){
+              ?>
               <tr>
-                <td><?= $i; ?></td>
-                <td><?= $row["nama_perusahaan"]; ?></td>
-                <td><?= $row["kategori"]; ?></td>
-                 <td><?= $row["kota"]; ?></td>
-                <td><?=  $row["website"]; ?></td>
-                <td>
+                <td><?php echo $no; ?></td>
+                <td><?php echo $item->nama_perusahaan; ?></td>
+                <td><?php echo $item->kategori; ?></td>
+                <td><?php echo $item->kota; ?></td>
+                <td><?php echo $item->website; ?></td>
+                <td class="ctr">
                   <div class="btn-group">
-                    <a href="detail.php?id_perusahaan=<?=$row[id_perusahaan]; ?>" class="btn btn-primary">
+                    <a target="_blank" href="detail.php?id=<?php echo $item->id_perusahaan; ?>" rel="tooltip" data-original-title="Lihat File" data-placement="top" class="btn btn-primary">
                     <i class="fa fa-map-marker"> </i> Detail dan Lokasi</a>&nbsp;
                   </div>
                 </td>
               </tr>
-            <?php $i++;?>
-            <?php endforeach;?>
+              <?php $no++; }}
+
+              else{
+                echo "data tidak ada.";
+                } ?>
+              
               </tbody>
             </table>
             </div>

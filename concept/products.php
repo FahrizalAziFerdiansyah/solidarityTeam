@@ -74,14 +74,14 @@
 		</div>
 	</nav>
 
-	<header  class="fh5co-cover" role="banner" style="background-image:url(images/bg.png);" data-stellar-background-ratio="0.5">
+	<header  class="fh5co-cover" role="banner" style="background-image:url(images/sampah.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">Our Creative Products</h1>
+							<h1 class="mb30" style="color: #2c3e50">Bank Sampah</h1>
 						</div>
 					</div>
 				</div>
@@ -91,138 +91,35 @@
 
 	
 
-	<div id="fh5co-project">
+	<div id="fh5co-testimonial" class="fh5co-bg-section"">
 		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading  animate-box">
-					<span>Want Some Cool Stuff</span>
-					<h2>Recent Products</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
+				<div class="col-md-12 ">
+						<div class="col-md-12">
+				<label style="color: black; font-size: 23px">Cek Lokasi Anda</label><hr> 
+				<p id="tampilkan"></p>
+				<button class="btn btn-info pull-left" onclick="getLocation()">Cek dah!</button><br><br>
+				<div id="mapcanvas" ></div>
+		</div><br><br>
 
-			<div class="row">
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-1.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Clipboard Office</h3>
-							<p>Web Design</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-2.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Smart Layers</h3>
-							<p>Brand &amp; Identity</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-3.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Notepad Mockup</h3>
-							<p>Illustration</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-4.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Outline Ribbon</h3>
-							<p>Web Design</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-5.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Food Icons Set</h3>
-							<p>Brand &amp; Identity</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-6.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Business Card</h3>
-							<p>Illustration</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-1.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Clipboard Office</h3>
-							<p>Web Design</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-2.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Smart Layers</h3>
-							<p>Brand &amp; Identity</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-3.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Notepad Mockup</h3>
-							<p>Illustration</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-4.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Outline Ribbon</h3>
-							<p>Web Design</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-5.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Food Icons Set</h3>
-							<p>Brand &amp; Identity</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="images/work-6.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-						<div class="fh5co-copy">
-							<h3>Business Card</h3>
-							<p>Illustration</p>
-						</div>
-					</a>
-				</div>
-
-
-				<div class="col-md-12 text-center">
-					<nav aria-label="Page navigation">
-					  <ul class="pagination">
-					    <li>
-					      <a href="#" aria-label="Previous">
-					        <span aria-hidden="true">&laquo;</span>
-					      </a>
-					    </li>
-					    <li class="active"><a href="#">1</a></li>
-					    <li><a href="#">2</a></li>
-					    <li><a href="#">3</a></li>
-					    <li><a href="#">4</a></li>
-					    <li><a href="#">5</a></li>
-					    <li>
-					      <a href="#" aria-label="Next">
-					        <span aria-hidden="true">&raquo;</span>
-					      </a>
-					    </li>
-					  </ul>
-					</nav>
+            <div class="col-md-12" style="margin-top: 20px">
+              <div class="form-group">
+                <label style="color: black;font-size: 23px">Pilih Lokasi Tujuan </label><br><hr>
+                <select class="form-control select2" style="width: 100%;">
+                  <option selected="selected">Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-2">
+            	<div class="form-group">
+            		<button class="btn" style="color: black">Pilih</button>
+            	</div>
+            </div>
 				</div>
 
 			</div>
@@ -308,6 +205,58 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
+	<script>
+var view = document.getElementById("tampilkan");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        view.innerHTML = "Yah browsernya ngga support Geolocation bro!";
+    }
+}
+ 
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    latlon = new google.maps.LatLng(lat, lon)
+    mapcanvas = document.getElementById('mapcanvas')
+    mapcanvas.style.height = '500px';
+    mapcanvas.style.width = '100%';
+ 
+    var myOptions = {
+    center:latlon,
+    zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+    }
+     
+    var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+    var marker = new google.maps.Marker({
+        position:latlon,
+        map:map,
+        title:"You are here!"
+    });
+    window.onload=document.getElementById("lok");
+   var element_kasi=document.getElementById("lok");
+   element_kasi.value =lat+','+ lon; 
+}
+ 
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            view.innerHTML = "Yah, mau deteksi lokasi tapi ga boleh :("
+            break;
+        case error.POSITION_UNAVAILABLE:
+            view.innerHTML = "Yah, Info lokasimu nggak bisa ditemukan nih"
+            break;
+        case error.TIMEOUT:
+            view.innerHTML = "Requestnya timeout bro"
+            break;
+        case error.UNKNOWN_ERROR:
+            view.innerHTML = "An unknown error occurred."
+            break;
+    }
+ }
+</script>
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>

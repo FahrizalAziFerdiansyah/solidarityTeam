@@ -280,7 +280,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cover {
-  height: 700px;
+  height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -343,7 +343,6 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-staff {
   text-align: center;
   margin-bottom: 30px;
-  background: #fff;
   padding: 30px;
   float: left;
   width: 100%;
@@ -1661,6 +1660,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .mb30 {
   margin-bottom: 30px !important;
+  
 }
 
 .row-pb-md {

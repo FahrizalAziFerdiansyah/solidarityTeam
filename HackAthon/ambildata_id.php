@@ -1,11 +1,11 @@
 <?php
 include "koneksi.php";
-$Q = mysqli_query($mysqli,"SELECT * FROM jasaweb where id_perusahaan='$id'");
+$Q = mysqli_query($mysqli,"SELECT * FROM jasaweb where id_perusahaan=".$id)or die(mysqli_error());
 if($Q){
  $posts = array();
-      if(mysql_num_rows($Q))
+      if(mysqli_num_rows($Q))
       {
-             while($post = mysql_fetch_assoc($Q)){
+             while($post = mysqli_fetch_assoc($Q)){
                      $posts[] = $post;
              }
       }  

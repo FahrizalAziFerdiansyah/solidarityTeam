@@ -1,5 +1,5 @@
 <?php 
-$id = $_GET['id_perusahaan'];
+$id = $_GET['id'];
 include_once "ambildata_id.php";
 $obj = json_decode($data);
 $titles="";
@@ -12,7 +12,6 @@ $kota="";
 $prov="";
 $lat="";
 $long="";
-
 foreach($obj->results as $item){
   $titles.=$item->nama_perusahaan;
   $ids.=$item->id_perusahaan;
@@ -29,7 +28,7 @@ foreach($obj->results as $item){
 $title = "Detail dan Lokasi : ".$titles;
 include_once "header.php"; ?>
 
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAbXF62gVyhJOVkRiTHcVp_BkjPYDQfH5w"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC5Jrp9PtHe0WapppUzxbIpMDWMAcV3qE4"></script>
 
 <script>
 

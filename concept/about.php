@@ -74,14 +74,14 @@
 		</div>
 	</nav>
 
-	<header  class="fh5co-cover" role="banner" style="background-image:url(images/bg.png);" data-stellar-background-ratio="0.5">
+	<header  class="fh5co-cover" role="banner" style="background-image:url(images/about.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">About Us</h1>
+							<h1 class="mb30" style="color: #2c3e50;"">Tentang Osing Go</h1>
 						</div>
 					</div>
 				</div>

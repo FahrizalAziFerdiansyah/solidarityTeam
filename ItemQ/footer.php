@@ -1,0 +1,1 @@
+<div class="rule">&copy 7th Software Engineering</div>

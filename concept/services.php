@@ -73,14 +73,14 @@
 			
 		</div>
 	</nav>
-	<header  class="fh5co-cover" role="banner" style="background-image:url(images/bg.png);" data-stellar-background-ratio="0.5">
+	<header  class="fh5co-cover" role="banner" style="background-image:url(images/oleh.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">Our Services</h1>
+							<h1 class="mb30" style="color: #2c3e50">Pusat Oleh-oleh</h1>
 						</div>
 					</div>
 				</div>
@@ -92,85 +92,77 @@
 
 	<div id="fh5co-services">
 		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-8 col-md-offset-2 text-left animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-heading">
-						<span>We're expert</span>
-						<h2>What We Do</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-6 ">
-					<div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-eye"></i>
-						</span>
-						<h3>Retina Ready</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Learn more</a></p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 ">
-					<div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-command"></i>
-						</span>
-						<h3>Fully Responsive</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Learn more</a></p>
-					</div>
-				</div>
-				<div class="clearfix visible-sm-block"></div>
-				<div class="col-md-4 col-sm-6 ">
-					<div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-power"></i>
-						</span>
-						<h3>Web Starter</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Learn more</a></p>
-					</div>
-				</div>
+			<div class="col-md-12">
+				<label style="color: black; font-size: 23px">Cek Lokasi Anda</label><hr> 
+				<p id="tampilkan"></p>
+				<button class="btn btn-info pull-left" onclick="getLocation()">Cek dah!</button><br><br>
+				<div id="mapcanvas" ></div>
+		</div><br><br>
+			   <div class="col-md-12" style="margin-top: 20px">
+              <div class="form-group">
+                <label style="color: black;font-size: 23px">Pilih Lokasi Tujuan </label><br><hr>
+              </div>
+            </div>
+            <div class="col-md-2">
 
-				<div class="clearfix visible-md-block"></div>
+            </div>
 
-				<div class="col-md-4 col-sm-6 ">
-					<div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-eye"></i>
-						</span>
-						<h3>Retina Ready</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Learn more</a></p>
-					</div>
-				</div>
-				<div class="clearfix visible-sm-block"></div>
-				<div class="col-md-4 col-sm-6 ">
-					<div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-command"></i>
-						</span>
-						<h3>Fully Responsive</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Learn more</a></p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 ">
-					<div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-power"></i>
-						</span>
-						<h3>Web Starter</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Learn more</a></p>
-					</div>
-				</div>
+   <div class="row">
+        <div class="col-md-12">
+        <div class="panel panel-info panel-dashboard">
+            <div class="panel-heading centered">
+              <h2 class="panel-title"><strong> </strong></h2>
+            </div>
+      
+            <div class="panel-body">
+              <table class="table table-bordered table-striped table-admin" style="color: #000000">
+              <thead>
+                <tr>
+                  <th width="10%">No.</th>
+                  <th width="30%">Nama Perusahaan</th>
+                  <th width="10%">Kategori</th>
+                  <th width="13%">Kota</th>
+                  <th width="20%">Website</th>
+                  <th width="27%">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php
+                $a = file_get_contents('http://localhost/concept/oleh-oleh.php');
+                $no=1;
+                if(json_decode($a,true)){
+                  $obj = json_decode($a);
+                  foreach($obj->results as $item){
+              ?>
+              <tr>
+                <td><?php echo $no; ?></td>
+                <td><?php echo $item->nama_perusahaan; ?></td>
+                <td><?php echo $item->kategori; ?></td>
+                <td><?php echo $item->kota; ?></td>
+                <td><?php echo $item->website; ?></td>
+                <td class="ctr">
+                  <div class="btn-group">
+                    <a target="_blank" href="detail.php?id=<?php echo $item->id_perusahaan; ?>" rel="tooltip" data-original-title="Lihat File" data-placement="top" class="btn btn-primary">
+                    <i class="fa fa-map-marker"> </i>Lokasi</a>&nbsp;
+                  </div>
+                </td>
+              </tr>
+              <?php $no++; }}
 
-				<div class="clearfix visible-md-block"></div>
-
-			</div>
+              else{
+                echo "data tidak ada.";
+                } ?>
+              
+              </tbody>
+            </table>
+            </div>
+            
+            </div>
+                </select>
+              </div>
+            </div>
+        </div>
+    </div>
 		</div>
 	</div>
 
@@ -252,7 +244,60 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkE6oJvsyX4sRAw0QTt3R_gJClY0NtIFQ&libraries=places&callback=initMap"
+        async defer></script>
+<script>
+var view = document.getElementById("tampilkan");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        view.innerHTML = "Yah browsernya ngga support Geolocation bro!";
+    }
+}
+ 
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    latlon = new google.maps.LatLng(lat, lon)
+    mapcanvas = document.getElementById('mapcanvas')
+    mapcanvas.style.height = '500px';
+    mapcanvas.style.width = '100%';
+ 
+    var myOptions = {
+    center:latlon,
+    zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+    }
+     
+    var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+    var marker = new google.maps.Marker({
+        position:latlon,
+        map:map,
+        title:"You are here!"
+    });
+    window.onload=document.getElementById("lok");
+   var element_kasi=document.getElementById("lok");
+   element_kasi.value =lat+','+ lon; 
+}
+ 
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            view.innerHTML = "Yah, mau deteksi lokasi tapi ga boleh :("
+            break;
+        case error.POSITION_UNAVAILABLE:
+            view.innerHTML = "Yah, Info lokasimu nggak bisa ditemukan nih"
+            break;
+        case error.TIMEOUT:
+            view.innerHTML = "Requestnya timeout bro"
+            break;
+        case error.UNKNOWN_ERROR:
+            view.innerHTML = "An unknown error occurred."
+            break;
+    }
+ }
+</script>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->

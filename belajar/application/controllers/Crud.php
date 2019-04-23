@@ -40,6 +40,26 @@ class Crud extends CI_Controller{
         $this->load->view('v_edit',$data);
         
     }
+
+    function update(){
+        $id_user = $this->input->post('id_user');
+        $nama = $this->input->post('nama');
+        $email = $this->input->post('email');
+        $no_hp = $this->input->post('no_hp');
+     
+        $data = array(
+            'nama' => $nama,
+            'email' => $email,
+            'no_hp' => $no_hp
+        );
+     
+        $where = array(
+            'id_user' => $id_user
+        );
+     
+        $this->m_data->update_data($where,$data,'pelanggan');
+        redirect('crud/index');
+    }
 }
 
 ?>

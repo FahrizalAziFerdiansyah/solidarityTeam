@@ -9,6 +9,7 @@
     <script src="main.js"></script>
 </head>
 <body>
+<center>
     <form action="<?php echo base_url(). 'crud/add_action'; ?>" method="post">
         <table>
         <tr>
@@ -33,5 +34,6 @@
 			</tr>
         </table>
     </form>
+	</center>
 </body>
 </html>

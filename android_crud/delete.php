@@ -1,31 +1,32 @@
 <?php
 include 'koneksi.php';
 
-$NIM=$_GET['NIM'];
+$NIM=$_POST['NIM'];
 $getdata=mysqli_query($mysqli,"SELECT * FROM mahasiswa WHERE NIM='$NIM'");
 $row=mysqli_num_rows($getdata);
+
 $query=mysqli_query($mysqli,"DELETE FROM mahasiswa WHERE NIM='$NIM'");
 
-$respose=array();
+$response=array();
 
 if ($row > 0)  {
 	# code...
 
 if ($query) {
-	$respose['code']=1;
-	$respose['message']="Delete Success";
+	$response['code']=1;
+	$response['message']="Delete Success";
 
 	# code...
 }else{
-	$respose['code']=0;
-	$respose['message']="Failed Delete";
+	$response['code']=0;
+	$response['message']="Failed Delete";
 
 }
 }
 else{
-	$respose['code']=0;
-	$respose['message']="Failed Delete, data not found";
+	$response['code']=0;
+	$response['message']="Failed Delete, data not found";
 }
 
-echo json_encode($respose);
+echo json_encode($response);
 ?>

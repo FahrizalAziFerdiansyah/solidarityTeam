@@ -1,10 +1,10 @@
 <?php
 include 'koneksi.php';
 
-$NIM=$_GET['NIM'];
-$Nama_mahasiswa=$_GET['Nama_mahasiswa'];
-$Jenis_kel=$_GET['Jenis_kel'];
-$Alamat=$_GET['Alamat'];
+$NIM=$_POST['NIM'];
+$Nama_mahasiswa=$_POST['Nama_mahasiswa'];
+$Jenis_kel=$_POST['Jenis_kel'];
+$Alamat=$_POST['Alamat'];
 
 $getdata=mysqli_query($mysqli,"SELECT * FROM mahasiswa WHERE NIM='$NIM'");
 $rows=mysqli_num_rows($getdata);

@@ -1,33 +1,25 @@
 <?php
 include'config.php';
 session_start();
-$name=$_SESSION['username'];
-$query="SELECT * FROM tbl_user where username='$name'";
-$data=mysqli_query($config,$query);
-while ($rowcat=mysqli_fetch_array($data)){
-$nama_lengkap=$rowcat['nama_lengkap'];
-$username=$rowcat['username'];
-$sub_bidang=$rowcat['sub_bidang'];
-$aduh=$rowcat['nama'];
-$nip=$rowcat['nip'];
+$username=$_SESSION['username'];
+$a= mysqli_query($config,"SELECT * FROM tbl_user WHERE username='$username' ");
+while ($tampil=mysqli_fetch_array($a)) {
+$nama_lengkap=$tampil['nama_lengkap'];
+$nama=$tampil['nama'];
+$nip=$tampil['nip'];
+$file=$tampil['foto'];
+
+}
+$sub_bidang="admin";
+$query=mysqli_query($config,"SELECT * FROM tbl_surat_keluar WHERE asal_surat_sub='$sub_bidang'");
+while ($data=mysqli_fetch_array($query)) {
+$asal_surat_sub=$data['asal_surat_sub'];
+
 
 }
 
 ?>
-
 <?php
-$level=1;
-$psn=mysqli_query($config,"SELECT count(nip) from tbl_user where level !='$level' ");
-while ($nilai=mysqli_fetch_array($psn)) {
-  $jmlh=$nilai['count(nip)'];
-}
-?>
-
-<?php
-$m=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar");
-while ($tampil=mysqli_fetch_array($m)) {
-  $hm=$tampil['count(id_surat)'];
-}
 
 $z=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE asal_surat_sub= '$sub_bidang'");
 while ($tampil=mysqli_fetch_array($z)) {
@@ -39,93 +31,36 @@ while ($tampil=mysqli_fetch_array($y)) {
 }
 
 $abcd=$ab + $abc;
-
 ?>
+
 <?php
-                //SEKETARIAT
-//Bag Umum (Surat Keluar)
-$bidang='Bag Umum';
-$bag_umum=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE asal_surat_sub= '$bidang'");
-while ($tampil=mysqli_fetch_array($bag_umum)) {
-  $a=$tampil['count(id_surat)'];
+$psn=mysqli_query($config,"SELECT count(nip) from tbl_user");
+while ($nilai=mysqli_fetch_array($psn)) {
+  $jmlh=$nilai['count(nip)'];
 }
-//Bag Umum (Surat Masuk)
-$nip='196708231991121001';
-$bag_umum=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE nip= '$nip'");
-while ($tampil=mysqli_fetch_array($bag_umum)) {
-  $b=$tampil['count(id_surat)'];
-}
-//Bag Program (Surat Keluar)
-$bidang='Bag Program';
-$data=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE asal_surat_sub= '$bidang'");
-while ($tampil=mysqli_fetch_array($data)) {
-  $e=$tampil['count(id_surat)'];
-}
-//Bag Program (Surat Masuk)
-$nip='41172253';
-$data=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE nip= '$nip'");
-while ($tampil=mysqli_fetch_array($data)) {
-  $f=$tampil['count(id_surat)'];
-}
-
-                //BIDANG KETENAGAAN
-//Seksi Tendik (Surat Keluar)
-$bidang='Seksi Tendik';
-$data=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE asal_surat_sub= '$bidang'");
-while ($tampil=mysqli_fetch_array($data)) {
-  $c=$tampil['count(id_surat)'];
-}
-//Seksi Tendik (Surat Masuk)
-$nip='122121';
-$data=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE nip= '$nip'");
-while ($tampil=mysqli_fetch_array($data)) {
-  $d=$tampil['count(id_surat)'];
-}
-//Seksi PSDM (Surat Keluar)
-$bidang='Seksi PSDM';
-$data=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE asal_surat_sub= '$bidang'");
-while ($tampil=mysqli_fetch_array($data)) {
-  $g=$tampil['count(id_surat)'];
-}
-//Seksi PSDM (Surat Masuk)
-$nip='196103251987032002';
-$data=mysqli_query($config,"SELECT count(id_surat) FROM tbl_surat_keluar WHERE nip= '$nip'");
-while ($tampil=mysqli_fetch_array($data)) {
-  $h=$tampil['count(id_surat)'];
-}
-
-
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-SAVE SURAT</title>
-  <link rel="icon" type="image/png" href="login/images/icons/favicon1.ico"/>
+  <title>AdminLTE 2 | Data Tables</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href=" assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href=" assets/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href=" assets/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href=" assets/dist/css/skins/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href=" assets/bower_components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="assets/bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="assets/dist/css/skins/_all-skins.min.css">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -146,7 +81,7 @@ while ($tampil=mysqli_fetch_array($data)) {
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">E-SAVE SURAT</span>
+      <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -196,25 +131,28 @@ while ($tampil=mysqli_fetch_array($data)) {
           <!-- Notifications: style can be found in dropdown.less -->
           
           <!-- Tasks: style can be found in dropdown.less -->
+          
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="assets/logo1.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">Admin</span>
+              <img src="upload/<?php echo $file;?>" class="user-image" alt="User Image">
+              <span class="hidden-xs"><?php echo $nama_lengkap; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="assets/logo1.png" class="img-circle" alt="User Image">
+                <img src="upload/<?php echo $file;?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Dinas Pendidikan Dan Kebudayaan
+                  <?php echo $nama_lengkap; ?> - <?php echo $nama;?>
                   <small><?php echo $sub_bidang ?></small>
                 </p>
               </li>
-              <!-- Menu Body -->
               <!-- Menu Footer-->
               <li class="user-footer">
+                <div class="pull-left">
+                  <a href="ubah_pass.php" class="btn btn-default btn-flat">Ubah Password</a>
+                </div>
                 <div class="pull-right">
                   <a href="logout.php" class="btn btn-default btn-flat">Keluar</a>
                 </div>
@@ -236,10 +174,10 @@ while ($tampil=mysqli_fetch_array($data)) {
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="assets/logo1.png" class="img-circle" alt="User Image">
+          <img src="upload/<?php echo $file;?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Admin</p>
+          <p><?php echo $nama_lengkap; ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -257,32 +195,41 @@ while ($tampil=mysqli_fetch_array($data)) {
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li><br>
-        <li class="treeview">
-          <a href="lg_admin.php">
-            <i class="fa fa-home"></i> <span>Beranda</span>
-          </a>  
-        </li>
-        
-         <li class="treeview">
+        <li class="">
           <a href="admin.php">
-            <i class="fa fa-envelope"></i>
+            <i class="fa fa-dashboard"></i> <span>Beranda</span>
+          </a>
+         
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
             <span>Transaksi Surat</span>
             <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="surat_masuk_admin.php"><i class="fa fa-circle-o"></i> Surat Masuk</a></li>
-            <li><a href="surat_keluar_admin.php"><i class="fa fa-circle-o"></i> Surat Keluar</a></li>
+            <li><a href="admin1.php"><i class="fa fa-circle-o"></i> Surat Masuk</a></li>
+            <li><a href="surat_keluar.php"><i class="fa fa-circle-o"></i> Surat Keluar</a></li>
           </ul>
         </li>
        
-        <li class="">
-          <a href="tambah_user.php">
-            <i class="fa fa-user-plus"></i> <span>Tambah User</span>
-          </a>  
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Agenda</span>
+            <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+          </ul>
         </li>
-
         
     </section>
     <!-- /.sidebar -->
@@ -302,8 +249,8 @@ while ($tampil=mysqli_fetch_array($data)) {
                 <img class="" src="assets/logo1.png" alt="User Avatar">
               </div>
               <!-- /.widget-user-image -->
-              <h3 class="widget-user-username">Selamat Datang Admin</h3>
-              <h5 class="widget-user-desc">Dinas Pendidikan Dan Kebudayaan</h5>
+              <h3 class="widget-user-username">Selamat Datang <?php echo $nama_lengkap ?></h3>
+              <h5 class="widget-user-desc">Dinas Pendidikan - <?php echo $nama ?> - <?php echo $sub_bidang?></h5>
             </div>
            
           </div>
@@ -314,14 +261,14 @@ while ($tampil=mysqli_fetch_array($data)) {
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>0 Pesan</h3>
+              <h3><?php echo $abc; ?> Pesan</h3>
 
               <p>Jumlah Surat Masuk</p>
             </div>
             <div class="icon">
               <i class="fa fa-envelope"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="admin1.php" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -334,14 +281,14 @@ while ($tampil=mysqli_fetch_array($data)) {
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>0 Pesan</h3>
+              <h3><?php echo $ab;?> Pesan</h3>
 
               <p>Jumlah Surat Keluar</p>
             </div>
             <div class="icon">
               <i class="fa fa-files-o"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="surat_keluar.php" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -357,7 +304,7 @@ while ($tampil=mysqli_fetch_array($data)) {
             <div class="icon">
               <i class="fa fa-user"></i>
             </div>
-            <a href="tambah_user.php" class="small-box-footer">
+            <a href="#" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -368,100 +315,64 @@ while ($tampil=mysqli_fetch_array($data)) {
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        
         <div class="col-xs-12">
+         
+          <!-- /.box -->
+
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Seketariat Dinas</h3>
+              <h3 class="box-title">Data Surat Masuk </h3> &nbsp; <a href="tambah_surat_admin.php" class=" btn btn-info ">Tambah Surat &nbsp;<i style="font-size: 15px;" class="fa fa-plus-circle"></i></a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                        <tr><th>-----------Sub------------</th><th style="text-align: center;">Surat Masuk</th><th style="text-align: center;">Surat Keluar</th></tr>
-                        <tr><td width="400px">Bagian Perencanaan</td> <td style="text-align: center;" width="300px"> 0 </td><td style="text-align: center;" width="300px"> 0 </td></tr>
-                        <tr><td>Bagian Keuangan dan Aset</td><td style="text-align: center;"> <?php echo $f ?></td><td style="text-align: center;"> <?php echo $e?></td></tr>
-                        <tr><td>Bagian Umum dan Kepegawaian</td><td style="text-align: center;"> <?php echo $b;?> </td><td style="text-align: center;"> <?php echo $a; ?> </td></tr>
+                <tr>
+                  <th>No Agenda</th>
+                  <th>Asal Surat</th>
+                  <th>Tujuan Surat</th>
+                  <th>Perihal</th>
+                  <th>Isi Disposisi</th>
+                  <th>No Surat</th>
+                  <th>Kode</th>
+                  <th>Tgl Diterima</th>
+                  <th>File</th>
+                  <th>Keterangan</th>
+                  <th>Print</th>
+                  <th>Hapus</th>
+                  </tr>
                 </thead>
+                <tbody>
+                <?php foreach ($query as $data) :?>
+            <tr>
+              <td><?= $data['id_surat'];?></td>
+              <td><?= $data['asal_surat'];?></td>
+              <td><?= $data['nip'];?></td>
+              <td><?= $data['isi'];?></td>
+              <td><?= $data['disposisi'];?></td>
+              <td><?= $data['no_surat'];?></td>
+              <td><?= $data['kode'];?></td>
+              <td><?= $data['tgl_surat'];?></td>
+              <td><?php echo '<a class="blue-text" href="upload/'.$data['file'].'" target="_blank">';?><?= $data['file'];?></td>
+              <td><?= $data['keterangan'];?></td>
+              <td><?php echo'<a type="button" class="btn btn-info" href="cetak.php?id_surat='.$data['id_surat'].'" target="_blank" class="btn btn-class"><i class="fa fa-print">';?></i>print</a>
+              <a  type="button" onclick='return confirm("Apakah anda yakin?")' class="btn btn-danger" <?php echo' href="delete2.php?id_surat='.$data['id_surat'].'">';?> <i class="fa fa-trash"></i>hapus</a></td>
+              
+            </tr>
+                <?php endforeach;?>
+                </tbody>
+                
               </table>
-          </div>  </div>
-           <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Bidang ketenagaan</h3>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                        <tr><th>-----------Sub------------</th><th style="text-align: center;">Surat Masuk</th><th style="text-align: center;">Surat Keluar</th></tr>
-                        <tr><td width="400px">Seksi Tenaga Pendidik</td> <td style="text-align: center;" width="300px"> <?php echo $d; ?></td><td style="text-align: center;" width="300px"> <?php echo $c; ?></td></tr>
-                        <tr><td>Seksi Tenaga Kependidikan</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td></tr>
-                        <tr><td>Seksi PSDM</td><td style="text-align: center;"><?php echo $h; ?></td><td style="text-align: center;"><?php echo $g; ?></td></tr>
-                </thead>
-              </table>
-          </div>  </div>
-           <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Bidang Pendidikan Dasar</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                        <tr><th>-----------Sub------------</th><th style="text-align: center;">Surat Masuk</th><th style="text-align: center;">Surat Keluar</th></tr>
-                        <tr><td  width="400px">Seksi Kurikulum</td> <td style="text-align: center;"  width="300px"> 0</td><td style="text-align: center;"  width="300px"> 0</td></tr>
-                        <tr><td>Seksi Sarana Prasarana</td><td style="text-align: center;"> 0</td><td style="text-align: center;"> 0</td></tr>
-                        <tr><td>Seksi Kesiswaan</td><td style="text-align: center;"> 0</td><td style="text-align: center;"> 0</td></tr>
-                </thead>
-              </table>
-          </div>  </div>
-           <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Bidang PNF & PAUD</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                        <tr><th>-----------Sub------------</th><th style="text-align: center;">Surat Masuk</th><th style="text-align: center;">Surat Keluar</th></tr>
-                        <tr><td  width="400px">Seksi Pendidikakn Non Formal</td> <td style="text-align: center;"  width="300px"> 0</td><td style="text-align: center;"  width="300px"> 0</td></tr>
-                        <tr><td>Seksi Pendidikan Karakter</td><td style="text-align: center;"> 0</td><td style="text-align: center;"> 0</td></tr>
-                        <tr><td>Seksi Paud</td><td style="text-align: center;"> 0</td><td style="text-align: center;"> 0</td></tr>
-                </thead>
-              </table>
-          </div>  </div>
-           <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Bidang kebudayaan</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                        <tr><th>-----------Sub------------</th><th style="text-align: center;">Surat Masuk</th><th style="text-align: center;">Surat Keluar</th></tr>
-                        <tr><td  width="400px">Seksi Kesenian</td> <td style="text-align: center;"  width="300px"> 0</td><td style="text-align: center;"  width="300px"> 0</td></tr>
-                        <tr><td>Seksi Budaya dan Tradisi</td><td style="text-align: center;"> 0 </td><td style="text-align: center;"> 0</td></tr>
-                        <tr><td>Seksi Sejarah dan Purbakala</td><td style="text-align: center;"> 0</td><td style="text-align: center;"> 0</td></tr>
-                </thead>
-              </table>
-          </div>  </div>
-        <!-- /.box -->
-      
-      <!-- /.content -->
-    </div>
-    <!-- /.container -->
-  </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
       <!-- /.row -->
-    
-</section>    <!-- /.content -->
+    </section>
+    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -668,43 +579,34 @@ while ($tampil=mysqli_fetch_array($data)) {
 </div>
 <!-- ./wrapper -->
 
-<script type="text/javascript"></script>
 <!-- jQuery 3 -->
-<script type="text/javascript" src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script type="text/javascript" src="assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
+<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script type="text/javascript" src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script type="text/javascript" src="assets/bower_components/raphael/raphael.min.js"></script>
-<script type="text/javascript" src="assets/bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script type="text/javascript" src="assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script type="text/javascript" src="assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script  type="text/javascript" src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script type="text/javascript" src="assets/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script  type="text/javascript" src="assets/bower_components/moment/min/moment.min.js"></script>
-<script type="text/javascript" src="assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script type="text/javascript" src="assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script type="text/javascript" src="assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script type="text/javascript" src="assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script type="text/javascript" src="assets/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="assets/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script type="text/javascript" src="assets/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script type="text/javascript" src="assets/dist/js/pages/dashboard.js"></script>
+<script src="assets/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script type="text/javascript" src="assets/dist/js/demo.js"></script>
+<script src="assets/dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 </body>
 </html>

@@ -1,8 +1,34 @@
-<?php
-include'config.php';
 
-        echo '
-        <style type="text/css">
+<?php
+include 'config.php';
+$id_surat=$_GET['id_surat'];
+$query=mysqli_query($config,"SELECT * FROM tbl_surat_masuk WHERE id_surat='$id_surat'");
+while ($row=mysqli_fetch_array($query)) {
+    $asal_bidang=$row['asal_surat'];
+    $asal_bidang_surat=$row['asal_surat_sub'];
+    $tgl=$row['tgl_surat'];
+    $no=$row['no_surat'];
+    $disposisi=$row['disposisi'];
+    $perihal=$row['isi'];
+    $no_agenda=$row['kode'];
+    
+
+    # code...
+}
+
+session_start();
+$nama=$_SESSION['username'];
+$user=mysqli_query($config,"SELECT * FROM tbl_user WHERE username='$nama'");
+while ($a=mysqli_fetch_array($user)) {
+    $tujuan=$a['nama'];
+    $tujuan_sub=$a['sub_bidang'];
+
+    # code...
+}
+$tgl_diterima=date('l, d-m-Y');
+
+?>
+<HTML>        <style type="text/css">
             table {
                 background: #fff;
                 padding: 5px;
@@ -171,84 +197,73 @@ include'config.php';
             }
         </style>
 
-        <body onload="window.print()">
-
+      <body onload="window.print()">
         <!-- Container START -->
+
             <div id="colres">
                 <div class="disp">';
-                    $query2 = mysqli_query($config, "SELECT * FROM tbl_surat");
-                        echo '<img class="logodisp" src="img/logo.png"/>';
-                        echo '<h6 class="up">PEMERINTAH KABUPATEN BONDOWOSO</h6>';
-                        echo '<h5 class="up" id="nama">DINAS PENDIDIKAN DAN KEBUDAYAAN</h5><br/>';
-                        echo '<span id="alamat"> Jalan Santawi No. 96 Telp. (0332) 421276 Fax : (0332) 427547</span> </br>';
-                        echo '<span id="alamat"> e-mail : diknasbws@yahoo.co.id website : https://www.dikbud.bondowosokab.go.id</span>';         
-                    echo '
-                    <tr>
-                        <h5 class="up" id="bws"> BONDOWOSO </h5>
-                    </tr>
+                        <img class="logodisp" src="tes.png"/>
+                        <h6 class="up">PEMERINTAH KABUPATEN BONDOWOSO</h6>
+                        <h5 class="up" id="nama">DINAS PENDIDIKAN</h5><br/>
+                       <span id="alamat"> Jalan Santawi No. 96 Telp. (0332) 421276 Fax : (0332) 427547</span> </br>
+                       <span id="alamat"> e-mail : diknasbws@yahoo.co.id website : https://www.dikbud.bondowosokab.go.id</span>         
+                    
+                  
                 </div>
-                <div class="separator"></div>';
-
-                $id_surat = mysqli_real_escape_string($config, $_REQUEST['id_surat']);
-                $query = mysqli_query($config, "SELECT * FROM tbl_surat_masuk WHERE id_surat='$id_surat'");
-
-                if(mysqli_num_rows($query) > 0){
-                $no = 0;
-                while($row = mysqli_fetch_array($query)){
-
-                echo '
-                    <table class="bordered">
+                <div class="separator"></div><center>
+                    <table rules="rows" class="bordered" id="tbl">
                         <tbody>
                             <tr>
                                 <td class="tgh" id="lbr" colspan="5">LEMBAR DISPOSISI</td>
                             </tr>
                             <tr>
-                                <td id="right" width="18%"><strong>Indeks Berkas</strong></td>
-                                <td id="left" style="border-right: none;" width="57%">: - </td>
-                                <td id="left" width="25"><strong>Kode</strong> : '.$row['kode'].'</td>
+                                <td id="left" style="border-right: none" width="18%"><strong>Surat Dari </strong>
+                                 <td id="left" style="border-right: none">: <?php echo $asal_bidang;?>/<?php echo $asal_bidang_surat;?></td>
                             </tr>
                             <tr><td id="right"><strong>Tanggal Surat</strong></td>
-                                <td id="left" colspan="2">: '.$row['tgl_surat'].'</td>
+
+                               <td id="left" style="border-right: none" width="30%">: <?php echo $tgl;?></td>
+
+                                <td id="right" width="12"><strong>Diterima Tanggal : <?php echo $tgl_diterima;?></strong>
+								 
                             </tr>
+                            <tr><td id="right"><strong>Nomor Surat</strong></td>
+
+                               <td id="left" style="border-right: none" width="30%">: <?php echo $no;?></td>
+
+                                <td id="right" width="12"><strong>No Agenda : <?php echo $no_agenda;?></strong>
+                                 
+                            </tr>
+                                <tr class="isi">
+                                <td colspan="2">
+                                    <strong>Perihal : <?php echo $perihal;?></strong><br/>
+                                    <div style="height: 50px;">
+
+                                         <td id="right" width="12"><strong>Diteruskan kepada :  </strong>
+                                         <p>1. <?php echo $tujuan;?> / <?php echo $tujuan_sub;?></p>
+                                         <br><br>
+                                         <p>2.</p>
+                                         <br><br>
+                                         <p>3.</p>
+
+
+                                    </div>
                             <tr>
-                                <td id="right"><strong>Nomor Surat</strong></td>
-                                <td id="left" colspan="2">: '.$row['no_surat'].'</td>
-                            </tr>
-                            <tr>
-                                <td id="right"><strong>Asal Surat</strong></td>
-                                <td id="left" colspan="2">: '.$row['asal_surat'].'</td>
-                            </tr>
-                            <tr>
-                                <td id="right"><strong>Isi Ringkas</strong></td>
-                                <td id="left" colspan="2">: '.$row['isi'].'</td>
-                            </tr>
-                            <tr>
-                                <td id="right"><strong>Diterima Tanggal</strong></td>
-                                <td id="left" style="border-right: none;">: </td>
-                                <td id="left"><strong>No. Agenda</strong> : '.$row['id_surat'].'</td>
-                            </tr>
-                            <tr>
-                                <td id="right"><strong>Tanggal Penyelesaian</strong></td>
-                                <td id="left" colspan="2">: </td>
-                            </tr>
-                            ';
-                        
-                        }
-                        } echo '
-                </tbody>
-            </table>
-            <div id="lead">
-                <p>KEPALA DINAS PENDIDIKAN DAN KEBUDAYAAN KABUPATEN BONDOWOSO</p>
-                <div style="height: 50px;"></div>';
-                    echo '<p class="lead">Drs.H. HARIMAS, M,Si </p>';
-                    echo '<p class="lead1">Pembina Utama Muda </p>';
-                    echo '<p class="lead1">NIP. 196010251980031004 </p>';
-                echo '
-            </div>
+
+                                   
+                                               </tbody>
+            </table><br>
+            <th> ISI DISPOSISI : <?php echo $disposisi;?>  </th>
+        </center>
+ <th><h4>Kepada Yth :</th><br>
+ <th>1.SEKRETARIS</th><br>
+ <th>2.KABID KETENAGAAN</th><br>
+ <th>3.KABID TK/SD</th><br>
+ <th>4.KABID SMP/SMK/SMA</th><br>          
+ <th>5.KABID PENDIDIKAN NON FORMAL</th>
         </div>
         <div class="jarak2"></div>
     <!-- Container END -->
 
-    </body>';
+    </body>
 
-?>

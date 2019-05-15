@@ -1,27 +1,29 @@
 <?php
 
-if($_SERVER['REQUESR_METHOD']=='POST'){
+require_once 'connect.php';
+if ($_SERVER['REQUEST_METHOD']=='POST') {
 
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    require_once 'connect.php';
+    
 
-    $sql = "SELECT * FROM users_table WHERE email='$email' ";
+    $sql = "SELECT * FROM user WHERE email='$email' ";
 
     $response = mysqli_query($conn, $sql);
 
     $result = array();
     $result['login'] = array();
+    
+    if ( mysqli_num_rows($response) === 1 ) {
+        
+        $row = mysqli_fetch_assoc($response);
 
-    if (mysqli_num_rows($response)=== 1 ){
-
-        $row = mysqli_fecth_assoc($response);
-
-        if (password_verify($password, $row['password'])) {
-
-            $index['name'] = $row['name'];
+        if ( password_verify($password, $row['password']) ) {
+            
+            $index['username'] = $row['username'];
             $index['email'] = $row['email'];
+            $index['id_user'] = $row['id_user'];
 
             array_push($result['login'], $index);
 
@@ -38,7 +40,11 @@ if($_SERVER['REQUESR_METHOD']=='POST'){
             echo json_encode($result);
 
             mysqli_close($conn);
+
         }
+
     }
+
 }
+
 ?>

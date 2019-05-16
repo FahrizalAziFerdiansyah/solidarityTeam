@@ -205,7 +205,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container py-sm-5">
             <div class="title-wthree text-center">
                 <h3 class="agile-title   text-white">
-                    our services
+                    Perbaiki
                 </h3>
                 <span></span>
             </div>
@@ -213,7 +213,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-lg-4">
                     <div class="agileits-services-grids">
                         <img src="images/i1.jpg" alt="" class="img-fluid rounded-circle" />
-                        <h4 class="sec-title">Service 1
+                        <h4 class="sec-title">Di Jalan
                         </h4>
                         <span></span>
                         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
@@ -223,7 +223,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-lg-4">
                     <div class="agileits-services-grids mt-lg-0 mt-5">
                         <img src="images/i3.jpg" alt="" class="img-fluid rounded-circle" />
-                        <h4 class="sec-title">Service 2
+                        <h4 class="sec-title">Di Rumah
                         </h4>
                         <span></span>
                         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
@@ -233,7 +233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-lg-4">
                     <div class="agileits-services-grids mt-lg-0 mt-5">
                         <img src="images/i2.jpg" alt="" class="img-fluid rounded-circle" />
-                        <h4 class="sec-title">Service 3
+                        <h4 class="sec-title">Di Bengkel
                         </h4>
                         <span></span>
                         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit

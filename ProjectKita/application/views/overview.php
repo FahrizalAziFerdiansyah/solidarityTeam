@@ -23,13 +23,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         }
     </script>
     <!-- Custom Theme files -->
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="<?php echo base_url('css/bootstrap.css')?>" type="text/css" rel="stylesheet" media="all">
+    <link href="<?php echo base_url('css/style.css')?>" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('css/fontawesome-all.min.css')?>" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i')?>" rel="stylesheet">
     <!-- //online-fonts -->
 </head>
 
@@ -608,8 +608,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>
     <!-- script for password match -->
     <!-- start-smooth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
+    <script src="<?php echo base_url('js/move-top.js')?>"></script>
+    <script src="<?php echo base_url('js/easing.js')?>"></script>
     <script>
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
@@ -640,12 +640,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         });
     </script>
-    <script src="js/SmoothScroll.min.js"></script>
+    <script src="<?php echo base_url('js/SmoothScroll.min.js')?>"></script>
     <!-- //smooth-scrolling-of-move-up -->
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+    <script src="<?php echo base_url('js/bootstrap.js')?>"></script>
 </body>
 
 </html>

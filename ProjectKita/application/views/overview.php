@@ -29,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="<?php echo base_url('css/fontawesome-all.min.css')?>" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i')?>" rel="stylesheet">
     <!-- //online-fonts -->
 </head>
 

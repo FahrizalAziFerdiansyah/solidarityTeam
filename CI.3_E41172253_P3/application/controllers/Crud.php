@@ -6,7 +6,7 @@ class Crud extends CI_Controller{
         $this->load->helper('url');
     }
     public function index(){
-        $data['pelanggan']=$this->m_data->tampil_data()->result();
+        $data['perbaikan']=$this->m_data->tampil_data()->result();
         $this->load->view('v_tampil',$data);
     }
     public function add(){

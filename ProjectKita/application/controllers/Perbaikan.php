@@ -13,33 +13,48 @@ class Perbaikan extends REST_Controller {
     }
 
     //Menampilkan data kontak
-    function index_get() {
-        $id = $this->get('id');
-        if ($id == '') {
-            $kontak = $this->db->get('perbaikan')->result();
-        } else {
-            $this->db->where('id', $id);
-            $kontak = $this->db->get('perbaikan')->result();
-        }
-        $this->response($kontak, 200);
+    //Menampilkan data kontak
+
+
+    function index_get() { 
+        $perbaikan = $this->db->get('perbaikan')->result();
+        $this->response(array("result"=>$perbaikan, 200));
     }
+
+    
 
     //Masukan function selanjutnya disini
     //Mengirim atau menambah data perbaikan baru
     
     function index_post() {
+        $jenis="Jalan";
+        $kondisi="Belum Diperbaiki";
+        $jam = date("H:i:s");
+        $tanggal=date("Y-m-d ");
         $data = array(
-                    'id'           => $this->post('id'),
+                    'id_perbaikan'           => $this->post('id_perbaikan'),
                     'nama'          => $this->post('nama'),
                     'no_hp'           => $this->post('no_hp'),
+                    'alamat'             => $this->post('alamat'),
                     'deskripsi'             => $this->post('deskripsi'),
-                    'alamat'             => $this->post('alamat'),);
+                    'jenis_perbaiki'             => $jenis,
+                    'kondisi'           =>$kondisi,
+                    'waktu' => $jam,
+                    'tanggal' => $tanggal,
+                    'LatLong'             => $this->post('LatLong'));
         $insert = $this->db->insert('perbaikan', $data);
         if ($insert) {
             $this->response($data, 200);
         } else {
             $this->response(array('status' => 'fail', 502));
         }
+    }
+
+    function login_user(){
+        $username=$this->input->post('username');
+        $password=$this->input->post('password');
+        $result=$this->m_login->cek_login($username,$password);
+        echo json_encode($result);
     }
 
 }

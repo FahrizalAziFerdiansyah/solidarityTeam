@@ -128,5 +128,34 @@ class Home extends CI_Controller{
         redirect('home/sparepart');
 
     }
+    public function perbaikan($id){
+        $where=array('id'=>$id);
+        $data['perbaikan']=$this->m_data->edit_perbaikan($where,'perbaikan')->result();
+        $this->load->view('v_perbaikan',$data);
+    }
+    public function ubah_perbaikan(){
+        $jam = date("H:i:s");
+        $tanggal=date("Y-m-d ");
+        $kondisi=$this->input->post('kondisi');
+        $bayar="0";
+        $id=$this->input->post('id');
+        $nama=$this->input->post('nama');
+        $montir=$this->input->post('montir');
+        $data=array(
+            'nama'=>$nama,
+            'montir'=>$montir,
+            'waktu'=>$jam,
+            'tanggal'=>$tanggal,
+            'kondisi'=>$kondisi,
+            'total_bayar'=>$bayar
+        );
+        $where=array(
+            'id'=>$id
+        );
+        $this->m_data->ganti_perbaikan($where,$data,'perbaikan');
+        redirect('home/jalan');
+
+
+    }
 
 }

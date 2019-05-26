@@ -243,10 +243,10 @@
                                             <th>No Hp</th>
                                             <th>Deskripsi</th>
                                             <th>Alamat</th>
-                                            <th>Total bayar</th>
+                                            
                                             <th>Kondisi</th>
-                                            <th>Jenis Perbaiki</th>
-                                            <th>Montir</th>
+                                            <th>Tanggal</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     
@@ -262,10 +262,14 @@
                                             <td><?php echo $t->no_hp ?></td>
                                             <td><?php echo $t->deskripsi ?></td>
                                             <td><?php echo $t->alamat ?></td>
-                                            <td><?php echo $t->total_bayar ?></td>
                                             <td><?php echo $t->kondisi ?></td>
-                                            <td><?php echo $t->jenis_perbaiki ?></td>
-                                            <td><?php echo $t->montir ?></td>
+                                            <td><?php echo $t->tanggal ?> <?php echo $t->waktu?></td>
+                                            <td width="250">
+											<a href="<?php echo site_url('home/perbaikan/'.$t->id) ?>"
+                                            class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Perbaiki</a>
+											<a href="<?php echo site_url('home/hapus/'.$t->id) ?>"
+                                            class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Bayar</a>
+										</td>
                                         </tr>
                                         <?php
                                     }

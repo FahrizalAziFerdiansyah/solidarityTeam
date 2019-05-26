@@ -29,4 +29,12 @@ class M_data extends CI_Model{
         $this->db->where($where);
         $this->db->update($table,$data);
     }
+    function edit_perbaikan($where,$table){
+        return $this->db->get_where($table,$where);
+    }
+    function ganti_perbaikan($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
+
 }

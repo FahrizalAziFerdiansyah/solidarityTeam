@@ -7,15 +7,11 @@ class M_login extends CI_Model
         parent::__construct();
     }
 
-    function cek_login($username, $password)
-    {
-        $result = $this->db->query("SELECT
-                                        *
-                                    FROM
-                                        user
-                                    WHERE
-                                        username = '$username'
-                                    AND PASSWORD = '$password'");
-        return $result->result();
-    }
+    function cek_login($username,$password){		
+        $this->db->where('username', $username);
+	    $this->db->where('password', $password);
+	    $data = $this->db->get('user')->row_array();
+	    return $data;
+    }	
+    
 }

@@ -14,5 +14,18 @@ function index_get(){
     $this->response(array("result"=>$sparepart,200));
 }
 
+
+
+function index_post() { 
+    $id_user=$this->input->post('id_user');
+    $perbaikan = $this->db->get_where('eks_perbaikan',['id_user'=>$id_user])->row_array();
+    if($perbaikan){
+    $output['kondisi']=$perbaikan['kondisi'];
+    $output['montir']=$perbaikan['montir'];
+    $output['waktu']=$perbaikan['waktu'];
+    $output['id_user']=$perbaikan['id_user'];
+    $this->response($output, 200);}
+}
+
 }
 ?>

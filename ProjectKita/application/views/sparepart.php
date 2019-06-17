@@ -262,10 +262,10 @@
                                             <td><?php echo substr($t->deskripsi, 0, 120) ?>....</td>
                                             <td><?php echo $t->stok ?></td>
                                             <td width="250">
-											<a href="<?php echo site_url('home/ubah/'.$t->id) ?>"
+											<a href="<?php echo site_url('home/ubah/'.$t->id_part) ?>"
                                             class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Edit</a>
                                              
-											<a href="<?php echo site_url('home/hapus/'.$t->id) ?>"
+											<a href="<?php echo site_url('home/hapus/'.$t->id_part) ?>"
                                             class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
 										</td>
                                             

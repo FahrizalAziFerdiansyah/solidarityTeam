@@ -16,8 +16,13 @@ class Perbaikan extends REST_Controller {
     //Menampilkan data kontak
 
 
-    function index_get() { 
+    /*function index_get() { 
         $perbaikan = $this->db->get('perbaikan')->result();
+        $this->response(array("result"=>$perbaikan, 200));
+    }*/
+    function index_get() { 
+        $tempat="Jalan";
+        $perbaikan = $this->db->get_where('perbaikan',['jenis_perbaiki'=>$tempat])->result();
         $this->response(array("result"=>$perbaikan, 200));
     }
 
@@ -32,7 +37,7 @@ class Perbaikan extends REST_Controller {
         $jam = date("H:i:s");
         $tanggal=date("Y-m-d ");
         $data = array(
-                    'id_perbaikan'           => $this->post('id_perbaikan'),
+                    'id'           => $this->post('id'),
                     'nama'          => $this->post('nama'),
                     'no_hp'           => $this->post('no_hp'),
                     'alamat'             => $this->post('alamat'),
@@ -41,6 +46,7 @@ class Perbaikan extends REST_Controller {
                     'kondisi'           =>$kondisi,
                     'waktu' => $jam,
                     'tanggal' => $tanggal,
+                    'id_user'           => $this->post('id_user'),
                     'LatLong'             => $this->post('LatLong'));
         $insert = $this->db->insert('perbaikan', $data);
         if ($insert) {

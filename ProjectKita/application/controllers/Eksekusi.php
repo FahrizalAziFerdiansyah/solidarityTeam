@@ -16,11 +16,13 @@ class Eksekusi extends REST_Controller {
     //Menampilkan data kontak
 
 
-    function index_get() { 
-        $perbaikan = $this->db->get('eks_perbaikan')->result();
+
+
+    function index_post() { 
+        $id_user=$this->input->post('id_user');
+        $perbaikan = $this->db->get_where('eks_perbaikan',['id_user'=>$id_user])->result();
         $this->response(array("result"=>$perbaikan, 200));
     }
-
     
 
     //Masukan function selanjutnya disini

@@ -28,10 +28,11 @@ class Bengkel extends REST_Controller {
         $jam = date("H:i:s");
         $tanggal=date("Y-m-d ");
         $data = array(
-                    'id_perbaikan'           => $this->post('id_perbaikan'),
+                    'id'           => $this->post('id'),
                     'nama'          => $this->post('nama'),
                     'no_hp'           => $this->post('no_hp'),
                     'deskripsi'             => $this->post('deskripsi'),
+                    'id_user'             => $this->post('id_user'),
                     'jenis_perbaiki'             => $jenis,
                     'kondisi'           =>$kondisi,
                     'waktu' => $jam,

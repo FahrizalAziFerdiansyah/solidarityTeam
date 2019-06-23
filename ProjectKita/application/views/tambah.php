@@ -240,13 +240,19 @@
                                                                 <div class="form-group">
                                                                     <div class="input-group">
                                                                         <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                                                                        <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+                                                                        <input type="text" id="email" name="password" placeholder="Buat Password Montir" class="form-control">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="input-group">
                                                                         <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                                                                        <input type="text" id="password" name="no_hp" placeholder="No Hp" class="form-control">
+                                                                        <input type="text" id="password" name="no" placeholder="No Hp" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                                                                        <input type="email" id="password" name="email" placeholder="Email" class="form-control">
                                                                     </div>
                                                                 </div>
                                                                 <div class="row form-group">

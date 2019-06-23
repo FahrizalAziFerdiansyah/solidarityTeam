@@ -11,6 +11,10 @@ class M_data extends CI_Model{
     function tampil_part(){
         return $this->db->get('sparepart');
     }
+
+    function tampil_montir(){
+        return $this->db->get('montir');
+    }
     
     function tambah_montir($data,$table){
         $this->db->insert($table,$data);

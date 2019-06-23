@@ -23,8 +23,9 @@ class Home extends CI_Controller{
         $this->load->view('dibengkel',$data);
     }
     public function montir()
-    {
-        $this->load->view("montir");
+    {   
+        $data['montir']=$this->m_data->tampil_montir()->result();
+        $this->load->view('montir',$data);
     }
     public function sparepart()
     {
@@ -39,8 +40,9 @@ class Home extends CI_Controller{
     {
         
         $nama_montir=$this->input->post('nama_montir');
-        $no_hp=$this->input->post('no_hp');
+        $no=$this->input->post('no');
         $email=$this->input->post('email');
+        $password=$this->input->post('password');
         $foto=$_FILES['foto'];
         if($foto=''){}
             else{
@@ -57,8 +59,9 @@ class Home extends CI_Controller{
 
         $data=array(
             'nama_montir'=>$nama_montir,
-            'no_hp'=>$no_hp,
+            'password'=>$password,
             'email'=>$email,
+            'no'=>$no,
             'foto'=>$foto
         );
         $this->m_data->tambah_montir($data,'montir');
@@ -138,18 +141,17 @@ class Home extends CI_Controller{
     public function ubah_perbaikan(){
         $jam = date("H:i:s");
         $tanggal=date("Y-m-d ");
-        $kondisi=$this->input->post('kondisi');
-        $bayar="0";
+        $kondisi="Belum Membayar";
+        $total_bayar=$this->input->post('total_bayar');
         $id=$this->input->post('id');
         $nama=$this->input->post('nama');
-        $montir=$this->input->post('montir');
+        //$montir=$this->input->post('montir');
         $data=array(
             'nama'=>$nama,
-            'montir'=>$montir,
             'waktu'=>$jam,
             'tanggal'=>$tanggal,
             'kondisi'=>$kondisi,
-            'total_bayar'=>$bayar
+            'total_bayar'=>$total_bayar
         );
         $where=array(
             'id'=>$id

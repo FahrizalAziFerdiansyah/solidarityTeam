@@ -229,7 +229,7 @@
                         
                                                 <div class="col-lg-6">
                                                     <div class="card">
-                                                        <div class="card-header">Ubah Sparepart</div>
+                                                        <div class="card-header">Detail Perbaikan</div>
                                                         <div class="card-body card-block">
                                                         <?php foreach( $perbaikan as $u){ ?>
                                                             <form action="<?php echo base_url(). 'index.php/home/ubah_perbaikan'; ?>" method="post">
@@ -240,22 +240,17 @@
                                                                         <input type="text" id="username" name="nama" placeholder="Username" value="<?php echo $u->nama ?>" class="form-control">
                                                                     </div>
                                                                 </div>
+                                                                <h2 style="color: black;font-size: 20px;">Ulasan Perbaikan :</h2>
+                                                                <p> <?php echo $u->ulasan?></p>
                                                                 <div class="form-group">
                                                                     <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                                                                        <input type="text" id="email" name="montir" placeholder="Pilih Montir" value="<?php echo $u->montir ?>" class="form-control">
+                                                                        <div class="input-group-addon"><i class="fa fa-money"></i></div>
+                                                                        <input type="text" id="email" name="total_bayar" placeholder="Masukkan Total Bayar" value="" class="form-control">
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                                                                        <select name="kondisi" id="select" class="form-control">
-                                                                            <option value="0">Pilih Kondisi</option>
-                                                                            <option value="Sedang Memperbaiki">Sedang Memperbaiki</option>
-                                                                            <option value="Perbaikan Selesai">Perbaikan Selesai</option>
-                                                                        </select>
-                                                                    </div>
+                                                                <div>
                                                                 </div>
+                
                                                                 
                                                                 
                                                                 <div class="form-actions form-group"><input type="submit" value="Ubah" class="btn btn-success btn-sm"></div>

@@ -57,7 +57,9 @@ class Montir extends REST_Controller {
         $id = $this->put('id');
         $data = array(
                     'id'       => $this->put('id'),
-                    'kondisi'          => $this->put('kondisi'));
+                    'kondisi'          => $this->put('kondisi'),
+                    'ulasan'          => $this->put('ulasan')
+                );
         $this->db->where('id', $id);
         $update = $this->db->update('perbaikan', $data);
         if ($update) {

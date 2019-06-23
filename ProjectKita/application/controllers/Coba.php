@@ -17,7 +17,8 @@ class Coba extends REST_Controller {
 
     function index_post() { 
         $id_user=$this->input->post('id_user');
-        $perbaikan = $this->db->get_where('perbaikan',['id_user'=>$id_user])->result();
+        $perbaikan=$this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON perbaikan.id_montir=montir.id_montir WHERE perbaikan.id_user=$id_user  ORDER BY waktu ")->result();
+        //$perbaikan = $this->db->get_where('perbaikan',['id_user'=>$id_user])->result();
         $this->response(array("result"=>$perbaikan, 200));
     }
 }

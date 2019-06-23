@@ -22,7 +22,13 @@ class Perbaikan extends REST_Controller {
     }*/
     function index_get() { 
         $tempat="Jalan";
-        $perbaikan = $this->db->get_where('perbaikan',['jenis_perbaiki'=>$tempat])->result();
+        $kondisi="Belum Diperbaiki";
+        $kondisi2="Perbaikan Selesai";
+        $perbaikan = $this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON montir.id_montir=perbaikan.id_montir WHERE jenis_perbaiki='jalan' ")->result();
+        /*$perbaikan = $this->db->where(['jenis_perbaiki'=>$tempat])
+                               ->not_like(['kondisi'=>$kondisi2])
+                              ->get('perbaikan')->result();*/
+                               
         $this->response(array("result"=>$perbaikan, 200));
     }
 
@@ -56,12 +62,22 @@ class Perbaikan extends REST_Controller {
         }
     }
 
-    function login_user(){
-        $username=$this->input->post('username');
-        $password=$this->input->post('password');
-        $result=$this->m_login->cek_login($username,$password);
-        echo json_encode($result);
+    function index_put(){
+        $id = $this->put('id');
+        $data = array(
+            'id' =>$this->put('id'),
+            'id_montir' =>$this->put('id_montir'),
+            'kondisi'=>$this->put('kondisi'));
+        $this->db->where('id',$id);
+        $update=$this->db->update('perbaikan',$data);
+        if($update){
+            $this->response($data,200);
+        } else{
+            $this->response(array('status'=>'fail',502));
+        }
     }
+
+    
 
 }
 ?>

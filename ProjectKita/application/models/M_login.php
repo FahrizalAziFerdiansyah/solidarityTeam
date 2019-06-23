@@ -12,6 +12,13 @@ class M_login extends CI_Model
 	    $this->db->where('password', $password);
 	    $data = $this->db->get('user')->row_array();
 	    return $data;
+    }
+    
+    function cek_login_montir($username,$password){		
+        $this->db->where('nama_montir', $username);
+	    $this->db->where('password', $password);
+	    $data = $this->db->get('montir')->row_array();
+	    return $data;
     }	
     
 }

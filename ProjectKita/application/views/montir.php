@@ -245,7 +245,7 @@ foreach($montir as $a){
                                 <div class="mx-auto d-block">
                                     <img class="rounded-circle mx-auto d-block" src="images/admin.jpg" alt="Card image cap">
                                     <h5 class="text-sm-center mt-2 mb-1"><?php echo $a->nama_montir ?></h5>
-                                    <div class="location text-sm-center"><i class="fa fa-map-marker"></i> California, United States</div>
+                                    <div class="location text-sm-center"><i class="fa fa-map-marker"></i><?php echo $a->no ?>,<?php echo $a->email ?></div>
                                 </div>
                                 <hr>
                                 <div class="card-text text-sm-center">

@@ -64,9 +64,12 @@ class Perbaikan extends REST_Controller {
 
     function index_put(){
         $id = $this->put('id');
+        $total_bayar="0";
         $data = array(
             'id' =>$this->put('id'),
             'id_montir' =>$this->put('id_montir'),
+            'ulasan'          => $this->put('ulasan'),
+            'total_bayar'          => $total_bayar ,
             'kondisi'=>$this->put('kondisi'));
         $this->db->where('id',$id);
         $update=$this->db->update('perbaikan',$data);

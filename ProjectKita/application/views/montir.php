@@ -243,9 +243,9 @@ foreach($montir as $a){
                             </div>
                             <div class="card-body">
                                 <div class="mx-auto d-block">
-                                    <img class="rounded-circle mx-auto d-block" src="images/admin.jpg" alt="Card image cap">
+                                    <img class="rounded-circle mx-auto d-block" src="<?php echo base_url('./berkas/'.$a->foto) ?>"  width="200px" height="200px" alt="Card image cap">
                                     <h5 class="text-sm-center mt-2 mb-1"><?php echo $a->nama_montir ?></h5>
-                                    <div class="location text-sm-center"><i class="fa fa-map-marker"></i><?php echo $a->no ?>,<?php echo $a->email ?></div>
+                                    <div class="location text-sm-center"><i class="fa fa-phone"></i> <?php echo $a->no ?>, <?php echo $a->email ?></div>
                                 </div>
                                 <hr>
                                 <div class="card-text text-sm-center">

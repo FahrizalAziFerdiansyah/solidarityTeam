@@ -246,6 +246,7 @@ foreach($montir as $a){
                                     <img class="rounded-circle mx-auto d-block" src="<?php echo base_url('./berkas/'.$a->foto) ?>"  width="200px" height="200px" alt="Card image cap">
                                     <h5 class="text-sm-center mt-2 mb-1"><?php echo $a->nama_montir ?></h5>
                                     <div class="location text-sm-center"><i class="fa fa-phone"></i> <?php echo $a->no ?>, <?php echo $a->email ?></div>
+
                                 </div>
                                 <hr>
                                 <div class="card-text text-sm-center">
@@ -253,6 +254,7 @@ foreach($montir as $a){
                                     <a href="#"><i class="fa fa-twitter pr-1"></i></a>
                                     <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
                                     <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
+                                    <a class="btn btn-danger"   href="tampil_montir.php?id_montir='.$row['id_montir].'">Delete</a>
                                 </div>
                             </div>
                         </div>

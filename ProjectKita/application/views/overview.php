@@ -34,8 +34,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-    <!-- banner -->
-    <div class="banner" id="home">
+    <!-- footer1 -->
+    <div class="footer1" id="home">
         <!-- header -->
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
@@ -127,13 +127,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </div>
                                     <div class="col-md-5">
                                         <label>
-                                            First name
+                                            Nama Depan
                                         </label>
                                         <input class="form-control" type="text" placeholder="Johnson" name="email" required="">
                                     </div>
                                     <div class="col-md-5">
                                         <label>
-                                            Last name
+                                            Nama Belakang
                                         </label>
                                         <input class="form-control" type="text" placeholder="Kc" name="email" required="">
                                     </div>
@@ -212,7 +212,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="agileits-services-row row  py-sm-5">
                 <div class="col-lg-4">
                     <div class="agileits-services-grids">
-                        <img src="images/i1.jpg" alt="" class="img-fluid rounded-circle" />
+                        <img src="images/jalan.jpg" alt="" class="img-fluid rounded-circle" />
                         <h4 class="sec-title">Di Jalan
                         </h4>
                         <span></span>
@@ -222,7 +222,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="col-lg-4">
                     <div class="agileits-services-grids mt-lg-0 mt-5">
-                        <img src="images/i3.jpg" alt="" class="img-fluid rounded-circle" />
+                        <img src="images/i2.png" alt="" class="img-fluid rounded-circle" />
                         <h4 class="sec-title">Di Rumah
                         </h4>
                         <span></span>
@@ -232,7 +232,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="col-lg-4">
                     <div class="agileits-services-grids mt-lg-0 mt-5">
-                        <img src="images/i2.jpg" alt="" class="img-fluid rounded-circle" />
+                        <img src="images/bengkel.png" alt="" class="img-fluid rounded-circle" />
                         <h4 class="sec-title">Di Bengkel
                         </h4>
                         <span></span>
@@ -251,7 +251,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container py-5">
             <div class="title-wthree text-center py-lg-5">
                 <h3 class="agile-title">
-                    creative digital lab
+                    SPAREPART
                 </h3>
                 <span></span>
             </div>
@@ -292,7 +292,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </ul>
                 </div>
                 <div class="col-lg-4 abbot-right">
-                    <img src="images/p2.png" class="img-fluid rounded-circle" alt="" />
+                    <img src="images/jalan.jpg" class="img-fluid rounded-circle" alt="" />
                 </div>
             </div>
             <div class="row abbot-main py-lg-5 py-4 mb-sm-5">

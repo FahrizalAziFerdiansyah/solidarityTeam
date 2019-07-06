@@ -20,5 +20,8 @@ class M_login extends CI_Model
 	    $data = $this->db->get('montir')->row_array();
 	    return $data;
     }	
+    function cek_login_admin($table,$where){		
+		return $this->db->get_where($table,$where);
+	}	
     
 }

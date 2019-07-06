@@ -26,6 +26,18 @@ class M_data extends CI_Model{
         $this->db->where($where);
         $this->db->delete($table);
     }
+    function delete_montir($where,$table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+    function delete_jalan($where,$table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+    function delete_bengkel($where,$table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
     function edit($where,$table){
        return $this->db->get_where($table,$where);
     }
@@ -42,6 +54,16 @@ class M_data extends CI_Model{
     }
     function edit_perbaikan_bengkel($where,$table){
         return $this->db->get_where($table,$where);
+    }
+
+    function ganti_perbaikan_bengkel($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
+
+    public function total_user(){
+        $query=$this->db->query('SELECT COUNT(id_user) as total FROM user');
+        return $query->result();
     }
 
 }

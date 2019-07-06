@@ -68,7 +68,10 @@
                     <li class="">
                     <a href="tambah" > <i class="menu-icon fa fa-th"></i>Tambah Data</a>
                     </li>
-                    <h3 class="menu-title"> <a href="#" aria-haspopup="true" aria-expanded="false"> </i>Keluar</a></h3><!-- /.menu-title -->
+                    <li class="">
+                    <a href="pelanggan" > <i class="menu-icon fa fa-th"></i>Pelanggan Mendaftar</a>
+                    </li>
+                    <h3 class="menu-title"> <a href="<?php echo base_url('index.php/home/logout'); ?>" aria-haspopup="true" aria-expanded="false"> </i>Keluar</a></h3><!-- /.menu-title -->
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside><!-- /#left-panel -->
@@ -132,8 +135,11 @@
         <div class="content mt-3">
 
             </div>
+<?php 
 
-
+foreach ($user as $t)
+{
+?>
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-1">
                     <div class="card-body pb-0">
@@ -143,16 +149,14 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="pelanggan">Lihat</a>
                                 </div>
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count"><?php echo $t->total;?></span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">Pelanggan Bergabung</p>
 
                         <div class="chart-wrapper px-0" style="height:70px;" height="70">
                             <canvas id="widgetChart1"></canvas>
@@ -162,8 +166,15 @@
 
                 </div>
             </div>
+            <?php
+                                    }
+                                        ?>
             <!--/.col-->
+            <?php 
 
+foreach ($montir as $a)
+{
+?>
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-2">
                     <div class="card-body pb-0">
@@ -173,16 +184,15 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="montir">Lihat</a>
+                                    
                                 </div>
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count"><?php echo $a->total_montir;?></span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">Montir Kami</p>
 
                         <div class="chart-wrapper px-0" style="height:70px;" height="70">
                             <canvas id="widgetChart2"></canvas>
@@ -191,8 +201,13 @@
                     </div>
                 </div>
             </div>
+            <?php
+              }
+            ?>
             <!--/.col-->
-
+<?php
+foreach($jalan as $b){
+?>
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-3">
                     <div class="card-body pb-0">
@@ -202,16 +217,15 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="jalan">Lihat</a>
+            
                                 </div>
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count"><?php echo $b->perbaikan_jalan;?></span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">Perbaikan Dijalan</p>
 
                     </div>
 
@@ -220,6 +234,13 @@
                     </div>
                 </div>
             </div>
+<?php
+}
+?>
+<?php
+
+foreach($bengkel as $c){
+?>
             <!--/.col-->
 
             <div class="col-sm-6 col-lg-3">
@@ -231,16 +252,15 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
                                 <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="bengkel">Lihat</a>
+                                    
                                 </div>
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count"><?php echo $c->perbaikan_bengkel;?></span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">Perbaikan Dijalan</p>
 
                         <div class="chart-wrapper px-3" style="height:70px;" height="70">
                             <canvas id="widgetChart4"></canvas>
@@ -250,7 +270,9 @@
                 </div>
             </div>
             <!--/.col-->
+<?php
 
+}?>
            
 
 

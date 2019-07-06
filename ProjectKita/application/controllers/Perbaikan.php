@@ -24,7 +24,7 @@ class Perbaikan extends REST_Controller {
         $tempat="Jalan";
         $kondisi="Belum Diperbaiki";
         $kondisi2="Perbaikan Selesai";
-        $perbaikan = $this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON montir.id_montir=perbaikan.id_montir WHERE jenis_perbaiki='jalan' ")->result();
+        $perbaikan = $this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON montir.id_montir=perbaikan.id_montir WHERE jenis_perbaiki='jalan' AND kondisi!='cancel' AND perbaikan.kondisi!='Sudah Membayar' ")->result();
         /*$perbaikan = $this->db->where(['jenis_perbaiki'=>$tempat])
                                ->not_like(['kondisi'=>$kondisi2])
                               ->get('perbaikan')->result();*/
@@ -77,6 +77,16 @@ class Perbaikan extends REST_Controller {
             $this->response($data,200);
         } else{
             $this->response(array('status'=>'fail',502));
+        }
+    }
+    function index_delete() {
+        $id = $this->delete('id');
+        $this->db->where('id', $id);
+        $delete = $this->db->delete('eks_perbaikan');
+        if ($delete) {
+            $this->response(array('status' => 'success'), 201);
+        } else {
+            $this->response(array('status' => 'fail', 502));
         }
     }
 

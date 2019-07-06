@@ -66,6 +66,9 @@
                     <li class="">
                     <a href="tambah" > <i class="menu-icon fa fa-th"></i>Tambah Data</a>
                     </li>
+                    <li class="">
+                    <a href="pelanggan" > <i class="menu-icon fa fa-th"></i>Pelanggan Mendaftar</a>
+                    </li>
                     <h3 class="menu-title"> <a href="#" aria-haspopup="true" aria-expanded="false"> </i>Keluar</a></h3><!-- /.menu-title -->
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -153,7 +156,7 @@ foreach($montir as $a){
                                     <a href="#"><i class="fa fa-twitter pr-1"></i></a>
                                     <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
                                     <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
-                                    <a class="btn btn-danger"   href="tampil_montir.php?id_montir='.$row['id_montir].'">Delete</a>
+                                    <a class="btn btn-danger" href="<?php echo site_url('home/hapus_montir/'.$a->id_montir) ?>">Delete</a>
                                 </div>
                             </div>
                         </div>

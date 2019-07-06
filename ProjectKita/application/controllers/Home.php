@@ -4,17 +4,71 @@ class Home extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('m_data');
+        $this->load->model('m_login');
         $this->load->helper('url');
 
     }
-    public function index()
-    {
-        $this->load->view("admin");
+    function login(){
+        $this->load->view('login');
+    }
+
+    function aksi_login(){
+        $username=$this->input->post('username');
+        $password = $this->input->post('password');
+        $where=array(
+            'username'=>$username,
+            'password'=>$password
+        );
+        
+        $cek=$this->m_login->cek_login_admin("admin",$where)->num_rows();
+
+        if($cek > 0){
+            $data_session=array(
+                'username'=>$username,
+                'status'=>"login"
+            );
+            $this->session->set_userdata($data_session);
+            echo "<script>
+		    alert('Anda berhasil login admin!');
+            </script>";
+            echo '<script>window.location="index";</script>';
+	    
+        }else{
+            echo "<script>
+		    alert('Username atau Password salah!');
+            </script>";
+            echo '<script>window.location="login";</script>';
+        }
+
         
     }
+    function logout(){
+        $this->session->sess_destroy();
+        echo "<script>
+        alert('Anda berhasil keluar!');
+        </script>";
+        echo '<script>window.location="login";</script>';
+    }
+       
+    public function index()
+    {
+        $data['user'] = $this->db->get('total_user')->result();
+        $data['montir'] = $this->db->get('jumlah_montir')->result();
+        $data['jalan'] = $this->db->get('total_jalan')->result();
+        $data['bengkel'] = $this->db->get('total_bengkel')->result();
+        $this->load->view('admin',$data);
+        
+    }
+    public function pelanggan()
+    {
+        $data['user'] = $this->db->get('user')->result();
+        $this->load->view('pelanggan',$data);   
+    }
+
+    
     public function jalan()
     {
-        $data['perbaikan']=$this->m_data->tampil_data()->result();
+        $data['perbaikan'] = $this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON montir.id_montir=perbaikan.id_montir WHERE jenis_perbaiki='jalan' ")->result();
         $this->load->view('dijalan',$data);
     }
     public function bengkel()
@@ -100,18 +154,18 @@ class Home extends CI_Controller{
         redirect ('home/sparepart');
     }
 
-    public function hapus($id){
-        $where=array('id'=>$id);
+    public function hapus($id_part){
+        $where=array('id_part'=>$id_part);
         $this->m_data->delete_part($where,'sparepart');
         redirect('home/sparepart');
     }
-    public function ubah($id){
-       $where=array('id'=>$id);
+    public function ubah($id_part){
+       $where=array('id_part'=>$id_part);
        $data['sparepart']= $this->m_data->edit($where,'sparepart')->result();
        $this->load->view('v_edit',$data);
     }
     public function edit_part(){
-        $id=$this->input->post('id');
+        $id_part=$this->input->post('id_part');
         $nama=$this->input->post('nama');
         $harga=$this->input->post('harga');
         $deskripsi=$this->input->post('deskripsi');
@@ -125,7 +179,7 @@ class Home extends CI_Controller{
         );
 
         $where=array(
-            'id'=>$id
+            'id_part'=>$id_part
         );
         $this->m_data->ubah_part($where,$data,'sparepart');
         redirect('home/sparepart');
@@ -173,10 +227,8 @@ class Home extends CI_Controller{
         $bayar="0";
         $id=$this->input->post('id');
         $nama=$this->input->post('nama');
-        $montir=$this->input->post('montir');
         $data=array(
             'nama'=>$nama,
-            'montir'=>$montir,
             'waktu'=>$jam,
             'tanggal'=>$tanggal,
             'kondisi'=>$kondisi,
@@ -185,8 +237,26 @@ class Home extends CI_Controller{
         $where=array(
             'id'=>$id
         );
-        $this->m_data->edit_perbaikan_bengkel($where,$data,'perbaikan');
+        $this->m_data->ganti_perbaikan_bengkel($where,$data,'perbaikan');
         redirect('home/bengkel');
     }
+    public function hapus_montir($id_montir){
+        $where=array('id_montir'=>$id_montir);
+        $this->m_data->delete_montir($where,'montir');
+        redirect('home/montir');
+    }
+    public function hapus_jalan($id){
+        $where=array('id'=>$id);
+        $this->m_data->delete_jalan($where,'perbaikan');
+        redirect('home/jalan');
+    }
+    public function hapus_bengkel($id){
+        $where=array('id'=>$id);
+        $this->m_data->delete_bengkel($where,'perbaikan');
+        redirect('home/bengkel');
+    }
+
+
+    
 
 }

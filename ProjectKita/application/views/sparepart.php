@@ -65,6 +65,9 @@
                     <li class="">
                     <a href="tambah" > <i class="menu-icon fa fa-th"></i>Tambah Data</a>
                     </li>
+                    <li class="">
+                    <a href="pelanggan" > <i class="menu-icon fa fa-th"></i>Pelanggan Mendaftar</a>
+                    </li>
                     <h3 class="menu-title"> <a href="#" aria-haspopup="true" aria-expanded="false"> </i>Keluar</a></h3><!-- /.menu-title -->
             </div><!-- /.navbar-collapse -->
         </nav>

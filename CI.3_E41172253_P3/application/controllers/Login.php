@@ -14,10 +14,10 @@ class Login extends CI_Controller{
         $password = $this->input->post('password');
         $where=array(
             'username'=>$username,
-            'password'=>md5($password)
+            'password'=>$password
         );
         
-        $cek=$this->m_login->cek_login("user",$where)->num_rows();
+        $cek=$this->m_login->cek_login("admin",$where)->num_rows();
 
         if($cek > 0){
             $data_session=array(

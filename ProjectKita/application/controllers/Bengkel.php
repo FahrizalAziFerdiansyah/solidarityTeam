@@ -17,9 +17,7 @@ class Bengkel extends REST_Controller {
 
 
     function index_get() { 
-        $jenis="Bengkel";
-        $where=$this->db->where('jenis_perbaiki = ',$jenis);
-        $perbaikan = $this->db->get('perbaikan')->result();
+        $perbaikan=$this->db->query("SELECT * FROM perbaikan WHERE jenis_perbaiki ='Bengkel' AND perbaikan.kondisi!='cancel' ORDER BY waktu ")->result();
         $this->response(array("result"=>$perbaikan, 200));
     }
     function index_post() {

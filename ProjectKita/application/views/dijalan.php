@@ -62,6 +62,9 @@
                     <li class="">
                     <a href="tambah" > <i class="menu-icon fa fa-th"></i>Tambah Data</a>
                     </li>
+                    <li class="">
+                    <a href="pelanggan" > <i class="menu-icon fa fa-th"></i>Pelanggan Mendaftar</a>
+                    </li>
                     <h3 class="menu-title"> <a href="#" aria-haspopup="true" aria-expanded="false"> </i>Keluar</a></h3><!-- /.menu-title -->
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -136,6 +139,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
+                                            <th>Nama Montir</th>
                                             <th>No Hp</th>
                                             <th>Deskripsi</th>
                                             <th>Alamat</th>
@@ -155,6 +159,7 @@
                                         <tr>
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $t->nama ?></td>
+                                            <td><?php echo $t->nama_montir ?></td>
                                             <td><?php echo $t->no_hp ?></td>
                                             <td><?php echo $t->deskripsi ?></td>
                                             <td><?php echo $t->alamat ?></td>
@@ -162,9 +167,9 @@
                                             <td><?php echo $t->tanggal ?> <?php echo $t->waktu?></td>
                                             <td width="250">
 											<a href="<?php echo site_url('home/perbaikan/'.$t->id) ?>"
-                                            class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Perbaiki</a>
-											<a href="<?php echo site_url('home/hapus/'.$t->id) ?>"
-                                            class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Bayar</a>
+                                            class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Bayar</a>
+											<a href="<?php echo site_url('home/hapus_jalan/'.$t->id) ?>"
+                                            class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
 										</td>
                                         </tr>
                                         <?php

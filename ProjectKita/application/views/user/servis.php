@@ -71,3 +71,54 @@
             </div>
         </header>
         <!--================Header Menu Area =================-->
+
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+					<h2><span>Service Motor</span></h2>
+							<a><font color=white>service motor tak perlu pergi ke Bengkel</font></a>
+						</div>
+						
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Services Area =================-->
+        <section class="services_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>Bengkel Keliling</h2>
+        			<p>Panggil montir bengkel resmi motormu dengan BELING</p>
+        		</div>
+        		<div class="row services_inner">
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="img/icon/service-icon-1.png" alt="">
+        					<a href="#"><h4>Jalan</h4></a>
+        					<p>Fitur yang dapat digunakan baik kondisi darurat maupun keperluan lainnya. dengan cara share lokasi,
+							 montir profesional akan datang ke kamu, sesuai tanggal, waktu dan tempat kamu berada </p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="img/icon/service-icon-2.png" alt="">
+        					<a href="#"><h4>Rumah</h4></a>
+        					<p>Merupakan fitur yang dapat memberikan kemudahan dalam melakukan service, 
+							tanpa perlu pergi ke bengkel pihak bengkel akan mengirimkan montir untuk datang ke rumah </p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="img/icon/service-icon-3.png" alt="">
+        					<a href="#"><h4>Bengkel</h4></a>
+        					<p>Fitur yang tak perlu repot dan tak perlu antri, Bengkel Kita memberikan kemudahan
+							 dengan melakukan pemesanan terlebih dahulu jika akan melakukan service </p>
+        				</div>
+        			</div>
+        </section>
+        <!--================End Services Area =================-->

@@ -57,8 +57,8 @@
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
 								<li class="nav-item active"><a class="nav-link" href="web_user">Beranda</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="servis">Servis</a></li>
-                                <li class="nav-item"><a class="nav-link" href="sparepart1">Sparepart</a></li>
+                                <li class="nav-item"><a class="nav-link" href="home/servis">Servis</a></li>
+                                <li class="nav-item"><a class="nav-link" href="home/sparepart1">Sparepart</a></li>
                                 <li class="nav-item"><a class="nav-link" href="login">Login Admin</a></li> 
 
 								

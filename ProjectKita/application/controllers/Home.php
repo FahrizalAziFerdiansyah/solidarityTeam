@@ -11,6 +11,11 @@ class Home extends CI_Controller{
     function web_user(){
         $this->load->view('user/index');
     }
+
+    function servis(){
+        $this->load->view('user/servis');
+    }
+    
     function login(){
         $this->load->view('login');
     }

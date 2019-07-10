@@ -15,6 +15,10 @@ class Home extends CI_Controller{
     function servis(){
         $this->load->view('user/servis');
     }
+
+    function sparepart1(){
+        $this->load->view('user/sparepart');
+    }
     
     function login(){
         $this->load->view('login');

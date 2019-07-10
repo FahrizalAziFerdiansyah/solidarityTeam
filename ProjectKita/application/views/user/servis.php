@@ -56,11 +56,11 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item"><a class="nav-link" href="index.php">Beranda</a></li> 
-								<li class="nav-item"><a class="nav-link" href="about-us.php">Tentang</a></li> 
-								<li class="nav-item active"><a class="nav-link" href="service.php">Service</a>
-									<li class="nav-item"><a class="nav-link" href="sparepart.php">Sparepart</a>
-								</li> 
+							<li class="nav-item "><a class="nav-link" href="web_user">Beranda</a></li> 
+                                <li class="nav-item active"><a class="nav-link" href="servis">Servis</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.php/Home/sparepart">Sparepart</a></li>
+                                <li class="nav-item"><a class="nav-link" href="login">Login Admin</a></li> 
+
 
 							</ul>
 							<ul class="nav navbar-nav navbar-right">

@@ -56,6 +56,10 @@
 						<button class="login100-form-btn" type="input">
 							Sign in
 						</button>
+
+						<div class="text-center">
+						<a class="small" href="<?= base_url('Home/web_user');?>">Menu Utama</a>
+						</div>
 					</div>
 					</form>
 

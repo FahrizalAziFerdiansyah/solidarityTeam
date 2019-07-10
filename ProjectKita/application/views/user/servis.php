@@ -122,3 +122,109 @@
         			</div>
         </section>
         <!--================End Services Area =================-->
+
+         <!--================Sparepart Area =================-->
+        
+         <section class="services_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        		<h2>Galeri Bengkel</h2>
+        		<p>Layanan servis yang kami sediakan untuk semua motor yang tersedia</p>
+        	</div>
+			<div class="row m0 builder_inner">
+				<div class="builder_item">
+					<img src="img/beling/beling-1.jpg" alt="">
+					<div class="hover">
+						<h4>Ganti Rantai</h4>
+				</div>
+				</div>
+				<div class="builder_item">
+					<img src="img/beling/beling-2.jpg" alt="">
+					<div class="hover">
+						<h4>Ganti Stoplamp</h4>
+					</div>
+				</div>
+				<div class="builder_item">
+					<img src="img/beling/beling-3.jpg" alt="">
+					<div class="hover">
+						<h4>Ganti Ban Motor</h4>
+					</div>
+				</div>
+				<div class="builder_item">
+					<img src="img/beling/beling-4.jpg" alt="">
+					<div class="hover">
+						<h4>Pengisian Air ACCU</h4>
+						
+					</div>
+				</div>
+				<div class="builder_item">
+					<img src="img/beling/beling-5.jpg" alt="">
+					<div class="hover">
+						<h4>Ganti Oli</h4>
+						
+					</div>
+				</div>
+				<div class="builder_item">
+					<img src="img/beling/beling-6.jpg" alt="">
+					<div class="hover">
+						<h4>Ganti Busi</h4>
+						
+					</div>
+				</div>
+			</div>
+        </section>
+          <!--================End Builder Image Area =================-->
+        
+        <!--================Feature Area =================-->	
+        <footer class="footer-area p_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3  col-md-6 col-sm-6">
+                        <div class="single-footer-widget ab_wd">
+                        <h6 class="footer_title">BELING</h6>
+            <p>Sistem informasi yang menyediakan perbaikan secara online.</p>
+          </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                        <div class="single-footer-widget contact_wd">
+                            <h6 class="footer_title">Kontak</h6>
+                            <p>
+                            Jl.Bondowoso<br>
+                            Bondowoso, B 535022<br>
+              Indenesia <br>
+              <strong>Phone:</strong> 085736586636<br>
+              <strong>Email:</strong> beling@gmail.com<br>
+            </p>	
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+      </div>
+    </div>
+    <div class="col-lg-4  col-md-6 col-sm-6">
+              <h6 class="footer_title">PELAYANAN</h6>
+            <p>Menyediakan pelayanan secara lengkap mulai ganti sparepart, konsultasi, dan ganti sparepart.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Kirim">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+     <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                <div class="section-top-border text-center">
+                </div>
+                <div class="copyright">
+        &copy; Copyright <strong><font color=white>BELING</font></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+            </div>
+        </footer>
+		<!--================ End footer Area  =================-->

@@ -143,9 +143,9 @@
                                             <th>No Hp</th>
                                             <th>Deskripsi</th>
                                             <th>Alamat</th>
-                                            
                                             <th>Kondisi</th>
                                             <th>Tanggal</th>
+                                            <th>Total Bayar</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -165,6 +165,7 @@
                                             <td><?php echo $t->alamat ?></td>
                                             <td><?php echo $t->kondisi ?></td>
                                             <td><?php echo $t->tanggal ?> <?php echo $t->waktu?></td>
+                                            <td>Rp. <?php echo $t->total_bayar ?></td>
                                             <td width="250">
 											<a href="<?php echo site_url('home/perbaikan/'.$t->id) ?>"
                                             class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Bayar</a>

@@ -12,6 +12,12 @@ class Daftar extends REST_Controller {
         $this->load->database();
     }
 
+    function index_get() { 
+        $montir = $this->db->get('total_bengkel')->row_array();
+        $this->response($montir, 200);
+    }
+
+
 
     function index_post() {
         $data = array(
@@ -22,6 +28,20 @@ class Daftar extends REST_Controller {
         $insert = $this->db->insert('user', $data);
         if ($insert) {
             $this->response($data, 200);
+        } else {
+            $this->response(array('status' => 'fail', 502));
+        }
+    }
+    function index_put() {
+        $id = $this->put('id');
+        $kondisi="cancel";
+        $data = array(
+            'id' =>$this->put('id'),
+            'kondisi'=>"cancel");
+        $this->db->where('id', $id);
+        $delete = $this->db->delete('eks_perbaikan');
+        if ($delete) {
+            $this->response(array('result' => 'success'), 201);
         } else {
             $this->response(array('status' => 'fail', 502));
         }

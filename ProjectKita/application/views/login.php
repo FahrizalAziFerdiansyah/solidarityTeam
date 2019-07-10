@@ -39,7 +39,7 @@
 	<div class="login"  >
 	<div class="row" >
 	
-			<form action="<?php echo base_url('index.php/home/aksi_login'); ?>" method="post">		
+			<form action="<?php echo base_url('home/aksi_login'); ?>" method="post">		
 					<span class="login100-form-title p-b-34">
 						MASUK ADMIN
 					</span>

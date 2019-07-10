@@ -12,13 +12,18 @@ class Coba extends REST_Controller {
         $this->load->database();
     }
 
+    function index_get() { 
+        $montir = $this->db->get('jum_jalan')->row_array();
+        $this->response($montir, 200);
+    }
+
     //Menampilkan data kontak
     //Menampilkan data kontak
 
     function index_post() { 
         $id_user=$this->input->post('id_user');
 
-        $perbaikan=$this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON perbaikan.id_montir=montir.id_montir WHERE perbaikan.id_user=$id_user AND perbaikan.kondisi!='cancel' AND perbaikan.kondisi!='Sudah Membayar' ORDER BY waktu ")->result();
+        $perbaikan=$this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON perbaikan.id_montir=montir.id_montir WHERE perbaikan.id_user=$id_user AND perbaikan.kondisi!='cancel' AND perbaikan.kondisi!='Sudah Membayar' AND perbaikan.kondisi!='Belum Membayar' ORDER BY waktu ")->result();
         //$perbaikan = $this->db->get_where('perbaikan',['id_user'=>$id_user])->result();
         $this->response(array("result"=>$perbaikan, 200));
     }

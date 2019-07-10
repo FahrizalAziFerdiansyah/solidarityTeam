@@ -49,6 +49,7 @@ function index_get(){
         }*/
         if ($cek) {
             $output['username'] = $username;
+            $output['password'] = $cek['password']; 
             $output['no_hp'] = $cek['no_hp']; 
             $output['id_user'] = $cek['id_user'];
             $this->response($output,200);
@@ -57,6 +58,21 @@ function index_get(){
         }
 
         
+    }
+    function index_put(){
+        $id_user=$this->put('id_user');
+        $data=array(
+            'id_user'=>$this->put('id_user'),
+            'password'=>$this->put('password')
+        );
+        $this->db->where('id_user',$id_user);
+        $update = $this->db->update('user',$data);
+        if($update){
+            $this->response($update,200);
+        }
+        else{
+            $this->response(array('status'=>'fail',502));
+        }
     }
 }
 ?>

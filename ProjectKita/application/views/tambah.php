@@ -207,6 +207,30 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-lg-6">
+                                                    <div class="card">
+                                                        <div class="card-header">Tambah Admin</div>
+                                                        <div class="card-body card-block">
+                                                        <?php echo form_open_multipart('home/add_admin'); ?>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                                        <input type="text" id="username" name="username" placeholder="Username" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                                                                        <input type="text" id="password" name="password" placeholder="Password" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                        
+                                                                <div class="form-actions form-group"><input type="submit" value="Tambah" class="btn btn-success btn-sm"></div>
+                                                            <?php echo form_close();?>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div><!-- .animated -->
                                     </div><!-- .content -->

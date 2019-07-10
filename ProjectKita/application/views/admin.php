@@ -8,8 +8,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <link rel="icon" type="image/png" href="../berkas/logoku.png">
+    <title>Beling</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -260,7 +260,7 @@ foreach($bengkel as $c){
                         <h4 class="mb-0">
                             <span class="count"><?php echo $c->perbaikan_bengkel;?></span>
                         </h4>
-                        <p class="text-light">Perbaikan Dijalan</p>
+                        <p class="text-light">Perbaikan Dibengkel</p>
 
                         <div class="chart-wrapper px-3" style="height:70px;" height="70">
                             <canvas id="widgetChart4"></canvas>

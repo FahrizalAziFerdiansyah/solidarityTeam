@@ -8,6 +8,9 @@ class Home extends CI_Controller{
         $this->load->helper('url');
 
     }
+    function web_user(){
+        $this->load->view('user/index');
+    }
     function login(){
         $this->load->view('login');
     }
@@ -121,6 +124,21 @@ class Home extends CI_Controller{
         $this->m_data->tambah_montir($data,'montir');
         redirect ('home/montir');
     }
+    public function add_admin()
+    {
+        
+        $username=$this->input->post('username');
+        $password=$this->input->post('password');
+        $data=array(
+            'username'=>$username,
+            'password'=>$password
+        );
+        $this->m_data->tambah_montir($data,'admin');
+        echo "<script>
+		    alert('Admin Ditambahkan!');
+            </script>";
+            echo '<script>window.location="index";</script>';
+    }
     public function add_part()
     {
         $nama=$this->input->post('nama');
@@ -197,6 +215,7 @@ class Home extends CI_Controller{
         $tanggal=date("Y-m-d ");
         $kondisi="Belum Membayar";
         $total_bayar=$this->input->post('total_bayar');
+        $ulasan=$this->input->post('ulasan');
         $id=$this->input->post('id');
         $nama=$this->input->post('nama');
         //$montir=$this->input->post('montir');
@@ -205,6 +224,7 @@ class Home extends CI_Controller{
             'waktu'=>$jam,
             'tanggal'=>$tanggal,
             'kondisi'=>$kondisi,
+            'ulasan'=>$ulasan,
             'total_bayar'=>$total_bayar
         );
         $where=array(
@@ -254,6 +274,11 @@ class Home extends CI_Controller{
         $where=array('id'=>$id);
         $this->m_data->delete_bengkel($where,'perbaikan');
         redirect('home/bengkel');
+    }
+    public function hapus_user($id_user){
+        $where=array('id_user'=>$id_user);
+        $this->m_data->delete_user($where,'user');
+        redirect('home/pelanggan');
     }
 
 

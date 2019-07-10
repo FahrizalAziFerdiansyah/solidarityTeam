@@ -139,7 +139,7 @@
                                                                         <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
                                                                         <select name="kondisi" id="select" class="form-control">
                                                                             <option value="0">Pilih Kondisi</option>
-                                                                            <option value="15 menit akan diperbaiki">15 menit akan diperbaiki</option>
+                                                                            <option value="5 menit akan diperbaiki">5 menit akan diperbaiki</option>
                                                                             <option value="Sedang Memperbaiki">Sedang Memperbaiki</option>
                                                                             <option value="Perbaikan Selesai">Perbaikan Selesai</option>
                                                                         </select>

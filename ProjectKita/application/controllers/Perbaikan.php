@@ -24,7 +24,7 @@ class Perbaikan extends REST_Controller {
         $tempat="Jalan";
         $kondisi="Belum Diperbaiki";
         $kondisi2="Perbaikan Selesai";
-        $perbaikan = $this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON montir.id_montir=perbaikan.id_montir WHERE jenis_perbaiki='jalan' AND kondisi!='cancel' AND perbaikan.kondisi!='Sudah Membayar' ")->result();
+        $perbaikan = $this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON montir.id_montir=perbaikan.id_montir WHERE jenis_perbaiki='jalan' AND perbaikan.kondisi='Belum Diperbaiki' ")->result();
         /*$perbaikan = $this->db->where(['jenis_perbaiki'=>$tempat])
                                ->not_like(['kondisi'=>$kondisi2])
                               ->get('perbaikan')->result();*/
@@ -40,7 +40,9 @@ class Perbaikan extends REST_Controller {
     function index_post() {
         $jenis="Jalan";
         $kondisi="Belum Diperbaiki";
-        $jam = date("H:i:s");
+        $total_bayar="0";
+        $ulasan="-";
+        $jam = date("H:i:sa");
         $tanggal=date("Y-m-d ");
         $data = array(
                     'id'           => $this->post('id'),
@@ -48,6 +50,8 @@ class Perbaikan extends REST_Controller {
                     'no_hp'           => $this->post('no_hp'),
                     'alamat'             => $this->post('alamat'),
                     'deskripsi'             => $this->post('deskripsi'),
+                    'total_bayar'             => $total_bayar,
+                    'ulasan'             => $ulasan,
                     'jenis_perbaiki'             => $jenis,
                     'kondisi'           =>$kondisi,
                     'waktu' => $jam,

@@ -18,7 +18,7 @@ function index_get(){
 
 function index_post() { 
     $id_user=$this->input->post('id_user');
-    $perbaikan=$this->db->query("SELECT * FROM perbaikan INNER JOIN montir ON perbaikan.id_montir=montir.id_montir WHERE perbaikan.id_user=$id_user AND perbaikan.kondisi !='Belum Diperbaiki'")->row_array();
+    $perbaikan=$this->db->query("SELECT * FROM perbaikan LEFT JOIN montir ON perbaikan.id_montir=montir.id_montir WHERE perbaikan.id_user=$id_user AND perbaikan.kondisi !='Belum Diperbaiki' AND perbaikan.kondisi !='cancel' AND perbaikan.kondisi!='Belum Membayar' AND perbaikan.kondisi!='Sudah Membayar'ORDER BY id DESC")->row_array();
         if($perbaikan){
             $output['kondisi']=$perbaikan['kondisi'];
             $output['nama']=$perbaikan['nama'];

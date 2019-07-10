@@ -140,8 +140,14 @@
                                                                         <input type="text" id="username" name="nama" placeholder="Username" value="<?php echo $u->nama ?>" class="form-control">
                                                                     </div>
                                                                 </div>
-                                                                <h2 style="color: black;font-size: 20px;">Ulasan Perbaikan :</h2>
+                                                                <h2 style="color: black;font-size: 20px;">Ulasan :</h2>
                                                                 <p> <?php echo $u->ulasan?></p>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon"><i class="fa fa-sticky-note"></i></div>
+                                                                        <textarea type="text" id="email" name="ulasan" placeholder="Masukkan Rincian Pembayaran" value="" class="form-control"></textarea>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="form-group">
                                                                     <div class="input-group">
                                                                         <div class="input-group-addon"><i class="fa fa-money"></i></div>

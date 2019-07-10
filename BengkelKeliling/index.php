@@ -62,6 +62,7 @@
 									
                                     <li class="nav-item"><a class="nav-link" href="sparepart.php">Sparepart</a>
 								</li> 
+                                <li class="nav-item"><a class="nav-link" href="about-us.php">Login Admin</a></li> 
 
 								
 							</ul>

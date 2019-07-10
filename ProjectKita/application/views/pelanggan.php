@@ -152,7 +152,7 @@
                                             <td><?php echo $t->username ?></td>
                                             <td><?php echo $t->no_hp ?></td>
                                             <td width="250" style="align:center;">
-											<a href="<?php echo site_url('home/hapus_jalan/'.$t->id_user) ?>"
+											<a href="<?php echo site_url('home/hapus_user/'.$t->id_user) ?>"
                                             class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
 										</td>
                                         </tr>

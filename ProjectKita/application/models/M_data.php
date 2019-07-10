@@ -19,6 +19,9 @@ class M_data extends CI_Model{
     function tambah_montir($data,$table){
         $this->db->insert($table,$data);
     }
+    function tambah_admin($data,$table){
+        $this->db->insert($table,$data);
+    }
     function tambah_part($data,$table){
         $this->db->insert($table,$data);
     }
@@ -27,6 +30,10 @@ class M_data extends CI_Model{
         $this->db->delete($table);
     }
     function delete_montir($where,$table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+    function delete_user($where,$table){
         $this->db->where($where);
         $this->db->delete($table);
     }

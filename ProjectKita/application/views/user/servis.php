@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="css/responsive.css">
     </head>
     <body>
-    <!--================Header Menu Area =================-->
+    <!--================ Header Menu Area =================-->
     <header class="header_area">
            	<div class="top_menu row m0">
            		<div class="container">
@@ -123,7 +123,7 @@
         </section>
         <!--================End Services Area =================-->
 
-         <!--================Sparepart Area =================-->
+        <!--================Sparepart Area =================-->
         
          <section class="services_area p_120">
         	<div class="container">
@@ -173,7 +173,7 @@
 				</div>
 			</div>
         </section>
-          <!--================End Builder Image Area =================-->
+        <!--================End Builder Image Area =================-->
         
         <!--================Feature Area =================-->	
         <footer class="footer-area p_120">
